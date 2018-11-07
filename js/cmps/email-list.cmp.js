@@ -6,7 +6,7 @@ export default {
     props:['mails'],
     template: `
     <section>
-        <email-preview v-for="currentMail in mails" :mail="currentMail" @click.native="emailClicked(currentMail.id)"></email-preview>
+        <email-preview v-for="currentMail in mails" :mail="currentMail" ></email-preview>
     </section>
         
     `,

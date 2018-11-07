@@ -19,20 +19,17 @@ export default {
         }
     },
     created() {
-        
         emailService.query()
             .then(emails => {
                 console.log(emails.inbox)
                 this.emails = emails.inbox
             })
-    },methods:{
+    },
+    methods:{
         setFilter(filter) {
         emailService.query(filter)
         .then(emails => this.emails = emails)
         }
-    },
-    methods: {
-        
     },
     components: {
         emailList,
