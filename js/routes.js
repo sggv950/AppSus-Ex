@@ -1,9 +1,9 @@
-import home from './pages/home.js'
+import appsus from './pages/app-sus.cmp.js'
 // import about from './pages/about.js'
 
 
 const routes = [
-    {path: '/', component: home},
+    {path: '/', component: appsus},
     // {path: '/about', component: about}
   ];
 
