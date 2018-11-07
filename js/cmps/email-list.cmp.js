@@ -4,10 +4,10 @@ import emailPreview from './email-preview.cmp.js';
 
 export default {
     name:'emaillist',
+    props:['mails'],
     template: `
     <section>
-        <h1>a email list</h1>
-        <email-preview></email-preview>
+        <email-preview v-for="currentMail in mails" :mail="currentMail"></email-preview>
     </section>
         
     `,

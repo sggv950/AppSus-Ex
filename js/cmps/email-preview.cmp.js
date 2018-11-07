@@ -2,7 +2,8 @@
 
 export default {
     name:'emailpreview',
+    props:['mail'],
     template: `
-        <h1>b email preview</h1>
+        <h1>{{mail.from}}</h1>
     `
 }

@@ -1,5 +1,5 @@
-import {storageService} from './storage.service.js'
-import {utilService} from './util.service.js'
+import storageService from './storage.service.js'
+import utilService from './util.service.js'
 
 const KEY = 'emailsKey';
 
@@ -19,7 +19,7 @@ function query(filter = null) {
 
 function getEmails(){
     return { inbox : [{
-        id: utilService.getId(),
+        id: utilService.makeId(),
         from: "david bruho",
         subject:'fdfds',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -28,7 +28,7 @@ function getEmails(){
         }
       ,
       {
-        id: utilService.getId(),
+        id: utilService.makeId(),
         from: "amir meyer",
         subject: 'ice Cream',
         body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
@@ -36,7 +36,7 @@ function getEmails(){
         isRead: false,   
         },
         {
-          id: utilService.getId(),
+          id: utilService.makeId(),
           from: "metus hendrerit",
           subject:'',
           body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -44,7 +44,7 @@ function getEmails(){
           isRead: false,   
           },
           {
-            id: utilService.getId(),
+            id: utilService.makeId(),
             from: "fafa asas",
             subject:'fasfas',
             body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -52,7 +52,7 @@ function getEmails(){
             isRead: false,   
             },
             {
-              id: utilService.getId(),
+              id: utilService.makeId(),
               from: "asd dsa",
               subject:'asdasdsa',
               body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -60,7 +60,7 @@ function getEmails(){
               isRead: false,   
               },
               {
-                id: utilService.getId(),
+                id: utilService.makeId(),
                 from: "metus hendrerit",
                 subject:'asdasdad',
                 body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -68,7 +68,7 @@ function getEmails(){
                 isRead: false,   
                 },
                 {
-                  id: utilService.getId(),
+                  id: utilService.makeId(),
                   from: "bruho chichi",
                   subject:'asdasdsad',
                   body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",
@@ -79,4 +79,8 @@ function getEmails(){
                 sent:[],
                 drafts:[],
                 }
+            }
+
+            export default {
+                query
             }
