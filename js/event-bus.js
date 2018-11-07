@@ -1,4 +1,3 @@
-'use strict';
 
 export const SHOW_USER_MSG = 'show-user-msg';
 

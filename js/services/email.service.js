@@ -3,7 +3,7 @@ import utilService from './util.service.js'
 
 const KEY = 'emailsKey';
 
-function query(filter = {type:'Inbox',keyword:''}) {
+function query(filter={keyword: '',type: 'Inbox',}) {
     return storageService.load(KEY)
         .then(emails => {
             if (!emails || !emails.length) {
@@ -11,20 +11,12 @@ function query(filter = {type:'Inbox',keyword:''}) {
                 storageService.store(KEY, emails);
             }
             var currEmails = emails
-            console.log(filter)
             if(filter.type === 'Inbox') currEmails = currEmails.inbox;
             else if(filter.type === 'Outbox') currEmails = currEmails.sent;
             else if(filter.type == 'Drafts') currEmails = currEmails.drafts;
-             return currEmails
-             .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
+             return currEmails.filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
             //  .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
         })    
-}
-
-function getEmailById(emailId){
-    return storageService.load(KEY).then(
-        res => console.log(res)
-    )
 }
 
 function getEmails(){
@@ -34,7 +26,7 @@ function getEmails(){
         subject:'fdfds',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
         time:Date.now(),
-        isRead: false,   
+        isRead: true,   
         }
       ,
       {
@@ -43,7 +35,7 @@ function getEmails(){
         subject: 'ice Cream',
         body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
         time: Date.now(),
-        isRead: false,   
+        isRead: true,   
         },
         {
           id: utilService.makeId(),
@@ -59,7 +51,7 @@ function getEmails(){
             subject:'fasfas',
             body: "mi est eros convallis auctor arcu dapibus himenaeos",
             time:Date.now(),
-            isRead: false,   
+            isRead: true,   
             },
             {
               id: utilService.makeId(),
@@ -92,6 +84,5 @@ function getEmails(){
             }
 
             export default {
-                query,
-                getEmailById
+                query
             }
