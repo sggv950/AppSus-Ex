@@ -3,7 +3,7 @@ import utilService from './util.service.js'
 
 const KEY = 'emailsKey';
 
-function query(filter = {type:''}) {
+function query(filter = {type:'Inbox',keyword:''}) {
     return storageService.load(KEY)
         .then(emails => {
             if (!emails || !emails.length) {
@@ -19,6 +19,12 @@ function query(filter = {type:''}) {
              .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
             //  .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
         })    
+}
+
+function getEmailById(emailId){
+    return storageService.load(KEY).then(
+        res => console.log(res)
+    )
 }
 
 function getEmails(){
@@ -86,5 +92,6 @@ function getEmails(){
             }
 
             export default {
-                query
+                query,
+                getEmailById
             }

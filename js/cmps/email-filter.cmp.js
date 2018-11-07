@@ -2,7 +2,7 @@ export default {
     template: `
     <section class="email-filter">
         <h3>Filter</h3>
-        <select v-model="filter.type" @input="emitFilter">
+        <select v-model="filter.type" @change="emitFilter">
             <option>Inbox</option>
             <option>Outbox</option>
             <option>Drafts</option>
