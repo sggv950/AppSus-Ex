@@ -7,6 +7,7 @@ export default {
     name: 'emailapp',
     template: `
         <section>
+            <h1>email-app</h1>
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>
                 <email-list :mails="emails"></email-list>
@@ -24,8 +25,7 @@ export default {
                 console.log(emails.inbox)
                 this.emails = emails.inbox
             })
-    },
-    methods:{
+    },methods:{
         setFilter(filter) {
         emailService.query(filter)
         .then(emails => this.emails = emails)
