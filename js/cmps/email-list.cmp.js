@@ -12,8 +12,9 @@ export default {
         
     `,
     created(){
-        console.log('listcreated', this.    mails);
+
         
+    },methods:{
     },
     components: {
         emailPreview,

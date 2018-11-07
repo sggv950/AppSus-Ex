@@ -8,7 +8,8 @@ export default {
     name: 'emaildetails',
     // props:['email'],
     template: `
-        <section v-if="email">
+        <section>
+            asdasdasdsad
             <h1>{{email.subject}}</h1>
             <h4>{{email.body}}</h4>
         </section>
@@ -27,6 +28,6 @@ export default {
         }
     },
     created() {
-        this.loadEmailData();
+        console.log('blublu')
     }
 }
