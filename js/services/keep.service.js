@@ -21,25 +21,25 @@ function query(filter=null) {
 function getKeepList() {
     return [{
             id: utilService.makeId(),
-            type: "text",
+            type: "Text",
             text: 'do shop',
             time: Date.now(),
             image:'',
         },{
             id: utilService.makeId(),
-            type: "text",
+            type: "Text",
             text: 'do box',
             time: Date.now(),
             image:'',
         },{
             id: utilService.makeId(),
-            type: "text",
+            type: "Text",
             text: 'do kox',
             time: Date.now(),
             image:'',
         },{
             id: utilService.makeId(),
-            type: "text",
+            type: "Text",
             text: 'do shox',
             time: Date.now(),
             image:'',

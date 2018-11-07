@@ -10,12 +10,4 @@ export default {
         <div class="note-subject">{{note.text}}</div>
     </div>
     `,
-    data() {
-        return{
-            currType: this.note.type
-        }
-        },
-        created(){
-            console.log(this.currType)
-        }
 }

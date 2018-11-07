@@ -1,6 +1,3 @@
-import keepText from './
-import keepTodo from './keep-todo.cmp.js'
-
 export default {
     name: 'notepreview',
     props: ['note'],
@@ -11,12 +8,4 @@ export default {
         <div class="note-subject">{{note.text}}</div>
     </div>
     `,
-    data() {
-        return{
-            currType: this.note.type
-        }
-        },
-        created(){
-            console.log(this.currType)
-        }
 }
