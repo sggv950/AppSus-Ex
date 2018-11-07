@@ -1,9 +1,11 @@
+import keepTodo from './keep-todo.cmp.js'
 
 export default {
     name: 'notepreview',
     props: ['note'],
     template: `
-    <component></component>
+    <component>
+    </component>
     `,
     data() {
         return{
