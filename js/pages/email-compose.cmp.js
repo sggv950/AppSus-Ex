@@ -12,6 +12,7 @@ export default {
         </div>
         <router-link to="/email"><button @click="saveDraft">Save Draft</button></router-link>
         <router-link to="/email"><button @click="sendEmail">Send</button></router-link>
+        <router-link to="/email"><button>Back</button></router-link>
     </section>
     `
     ,
