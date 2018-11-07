@@ -19,6 +19,16 @@ function query(filter={keyword: '',type: 'Inbox',}) {
         })    
 }
 
+function getEmailById(id){
+    return storageService.load(KEY)
+        .then(emails => {
+            console.log('service', id)
+            return emails.inbox.find(email => {
+                return email.id === id
+            })
+        })
+}
+
 function getEmails(){
     return { inbox : [{
         id: utilService.makeId(),
@@ -84,5 +94,6 @@ function getEmails(){
             }
 
             export default {
-                query
+                query,
+                getEmailById
             }
