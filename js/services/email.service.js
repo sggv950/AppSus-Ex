@@ -36,7 +36,8 @@ function getEmails(){
         subject:'fdfds',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
         time:Date.now(),
-        isRead: true,   
+        isRead: true,
+        type:'inbox'   
         }
       ,
       {
@@ -46,6 +47,7 @@ function getEmails(){
         body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
         time: Date.now(),
         isRead: true,   
+        type:'inbox'   
         },
         {
           id: utilService.makeId(),
@@ -54,6 +56,7 @@ function getEmails(){
           body: "mi est eros convallis auctor arcu dapibus himenaeos",
           time:Date.now(),
           isRead: false,   
+          type:'inbox'   
           },
           {
             id: utilService.makeId(),
@@ -61,7 +64,8 @@ function getEmails(){
             subject:'fasfas',
             body: "mi est eros convallis auctor arcu dapibus himenaeos",
             time:Date.now(),
-            isRead: true,   
+            isRead: true,
+            type:'inbox'      
             },
             {
               id: utilService.makeId(),
@@ -69,7 +73,8 @@ function getEmails(){
               subject:'asdasdsa',
               body: "mi est eros convallis auctor arcu dapibus himenaeos",
               time:Date.now(),
-              isRead: false,   
+              isRead: false, 
+              type:'inbox'     
               },
               {
                 id: utilService.makeId(),
@@ -77,7 +82,8 @@ function getEmails(){
                 subject:'asdasdad',
                 body: "mi est eros convallis auctor arcu dapibus himenaeos",
                 time:Date.now(),
-                isRead: false,   
+                isRead: false,  
+                type:'inbox'    
                 },
                 {
                   id: utilService.makeId(),
@@ -85,11 +91,10 @@ function getEmails(){
                   subject:'asdasdsad',
                   body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",
                   time: Date.now(),
-                  isRead: false,   
+                  isRead: false,  
+                  type:'inbox'    
                   }
                 ],
-                sent:[],
-                drafts:[],
                 }
             }
 
