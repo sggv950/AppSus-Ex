@@ -7,6 +7,9 @@ export default {
     name: 'emailapp',
     template: `
         <section>
+        <router-link exact to="/email/compose">New Message</router-link> 
+        <router-link exact to="/email/">Emails</router-link>
+ 
             <h1>email-app</h1>
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>

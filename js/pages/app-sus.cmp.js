@@ -1,16 +1,18 @@
 'use strict';
 
 import emailApp from './email-app.cmp.js';
+import keepApp from './keep-app.cmp.js'
 
 export default {
     name: 'appsus',
-    template: `
-    <section>
-        <h1>Appsus</h1>
-        <email-app></email-app>
+    template: `    
+    <section>    
+    <router-link exact to="/email/">Emails</router-link> 
+    <router-link exact to="/keep/">keep</router-link>
     </section>
     `,
     components: {
-        emailApp
+        emailApp,
+        keepApp
     }
 }

@@ -1,0 +1,8 @@
+.note-preview-item{
+border: 1px solid black;
+width: 150px;
+height: 250px;
+background-color: white;
+text-align: center;
+padding: 20px;
+}

@@ -27,6 +27,7 @@ export default {
         },
         
     getProgClass(){
+        if(!this.result)  return {width : 0+'%'}
         return {width : this.result+'%'}
     }
 

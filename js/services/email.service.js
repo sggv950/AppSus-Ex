@@ -21,44 +21,12 @@ function getEmailById(id) {
     return storageService.load(KEY)
         .then(emails => {
             console.log('service', id)
-            return emails.inbox.find(email => {
+            return emails.find(email => {
                 return email.id === id
             })
         })
 }
 
-<<<<<<< HEAD
-function getEmails(){
-    return { inbox : [{
-        id: utilService.makeId(),
-        from: "david bruho",
-        subject:'fdfds',
-        body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time:Date.now(),
-        isRead: true,
-        type:'inbox'   
-        }
-      ,
-      {
-        id: utilService.makeId(),
-        from: "amir meyer",
-        subject: 'ice Cream',
-        body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
-        time: Date.now(),
-        isRead: true,   
-        type:'inbox'   
-        },
-        {
-          id: utilService.makeId(),
-          from: "metus hendrerit",
-          subject:'asdasd asdsad',
-          body: "mi est eros convallis auctor arcu dapibus himenaeos",
-          time:Date.now(),
-          isRead: false,   
-          type:'inbox'   
-          },
-          {
-=======
 
 
 function updateEmailRead(id) {
@@ -97,47 +65,10 @@ function getEmails() {
             type: 'Inbox'
         },
         {
->>>>>>> 9a7d790dba6a90d514f22083cd691ba5f663838d
             id: utilService.makeId(),
             from: "fafa asas",
             subject: 'fasfas',
             body: "mi est eros convallis auctor arcu dapibus himenaeos",
-<<<<<<< HEAD
-            time:Date.now(),
-            isRead: true,
-            type:'inbox'      
-            },
-            {
-              id: utilService.makeId(),
-              from: "asd dsa",
-              subject:'asdasdsa',
-              body: "mi est eros convallis auctor arcu dapibus himenaeos",
-              time:Date.now(),
-              isRead: false, 
-              type:'inbox'     
-              },
-              {
-                id: utilService.makeId(),
-                from: "metus hendrerit",
-                subject:'asdasdad',
-                body: "mi est eros convallis auctor arcu dapibus himenaeos",
-                time:Date.now(),
-                isRead: false,  
-                type:'inbox'    
-                },
-                {
-                  id: utilService.makeId(),
-                  from: "bruho chichi",
-                  subject:'asdasdsad',
-                  body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",
-                  time: Date.now(),
-                  isRead: false,  
-                  type:'inbox'    
-                  }
-                ],
-                }
-            }
-=======
             time: Date.now(),
             isRead: true,
             type: 'Inbox'
@@ -171,7 +102,6 @@ function getEmails() {
         }
         ]
 }
->>>>>>> 9a7d790dba6a90d514f22083cd691ba5f663838d
 
 export default {
     query,

@@ -13,7 +13,6 @@ export default {
     `,
     created(){
         
-    },methods:{
     },
     components: {
         emailPreview,
