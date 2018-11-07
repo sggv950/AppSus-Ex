@@ -3,17 +3,21 @@ import utilService from './util.service.js'
 
 const KEY = 'emailsKey';
 
-function query(filter = null) {
+function query(filter = {type:''}) {
     return storageService.load(KEY)
         .then(emails => {
             if (!emails || !emails.length) {
-                emails = getEmails();
+                 emails = getEmails();
                 storageService.store(KEY, emails);
             }
-            console.log('emails: ', emails);
-            if (filter === null) return emails;
-            else return emails.filter(email => 
-                            email.from.toUpperCase().includes(filter.emailBy.toUpperCase()))
+            var currEmails = emails
+            console.log(filter)
+            if(filter.type === 'Inbox') currEmails = currEmails.inbox;
+            else if(filter.type === 'Outbox') currEmails = currEmails.sent;
+            else if(filter.type == 'Drafts') currEmails = currEmails.drafts;
+             return currEmails
+             .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
+            //  .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
         })    
 }
 
