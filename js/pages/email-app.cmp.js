@@ -10,20 +10,20 @@ export default {
             <h1>email-app</h1>
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>
-                <email-list :mails="emails"></email-list>
+                <email-list v-if="emails" :mails="emails"></email-list>
             </div>
         </section>
     `,
     data() {
         return {
             emails: null,
+            selectedMail: null
         }
     },
     created() {
         emailService.query()
             .then(emails => {
-                console.log(emails.inbox)
-                this.emails = emails.inbox
+                this.emails = emails
             })
     },methods:{
         setFilter(filter) {
