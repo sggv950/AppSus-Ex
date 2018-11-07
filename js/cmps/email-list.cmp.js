@@ -11,15 +11,6 @@ export default {
         
     `,
     components: {
-<<<<<<< HEAD
-        emailPreview
-    },
-    methods: {
-        emailClicked(emailId){
-            this.$router.push(`/email/${emailId}`)
-        }
-=======
         emailPreview,
->>>>>>> 9c5ce968302343abb25000a4421820e224eb1d25
     }
 }
