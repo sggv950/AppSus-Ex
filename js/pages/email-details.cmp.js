@@ -11,6 +11,7 @@ export default {
         <section v-if="email">
             <h1>{{email.subject}}</h1>
             <h4>{{email.body}}</h4>
+            <button><router-link to="/email">Back</router-link></button>
         </section>
     `,
     data() {
@@ -19,14 +20,13 @@ export default {
         }
     },
     methods: {
-        loadEmailData() {
-            var emailId = this.$route.params.emailId;
-            console.log(emailId);
-            // emailService.getEmailById(emailId)
-            // .then(email => this.email = email)
-        }
+        
+            
+        
     },
     created() {
-        this.loadEmailData();
+        var emailId = this.$route.params.id;
+        emailService.getEmailById(emailId)
+            .then(email => this.email = email)
     }
 }

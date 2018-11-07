@@ -1,6 +1,7 @@
 import emailService from '../services/email.service.js'
 import emailList from '../cmps/email-list.cmp.js';
 import emailFilter from '../cmps/email-filter.cmp.js';
+import emailDetails from './email-details.cmp.js'
 
 export default {
     name: 'emailapp',
@@ -10,6 +11,7 @@ export default {
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>
                 <email-list v-if="emails" :mails="emails"></email-list>
+                
             </div>
         </section>
     `,
@@ -32,6 +34,7 @@ export default {
     },
     components: {
         emailList,
-        emailFilter
+        emailFilter,
+        emailDetails
     }
 }

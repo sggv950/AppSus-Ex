@@ -12,7 +12,6 @@ export default {
         
     `,
     created(){
-        console.log('listcreated', this.    mails);
         
     },
     components: {
