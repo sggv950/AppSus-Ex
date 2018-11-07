@@ -2,6 +2,8 @@ import storageService from './storage.service.js'
 import utilService from './util.service.js'
 
 const KEY = 'emailsKey';
+var emailDB = [];
+
 
 function query(filter = { keyword: '', type: 'Inbox', }) {
     return storageService.load(KEY)
@@ -10,29 +12,56 @@ function query(filter = { keyword: '', type: 'Inbox', }) {
                 emails = getEmails();
                 storageService.store(KEY, emails);
             }
-            var currEmails = emails
-            return currEmails.filter(email => email.type.toUpperCase().includes(filter.type.toUpperCase()))
+            emailDB = emails
+            return emailDB.filter(email => email.type.toUpperCase().includes(filter.type.toUpperCase()))
                 .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
                 // .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
         })
 }
 
-function getEmailById(id) {
+function updateEmailRead(id) {
     return storageService.load(KEY)
         .then(emails => {
             console.log('service', id)
-            return emails.find(email => {
+            var currEmail = emails.find(email => {
                 return email.id === id
             })
+            console.log(currEmail)
+            if ('isRead' in currEmail) {
+                currEmail.isRead = true;
+                storageService.store(KEY, emails)
+            }
+            return currEmail
         })
 }
 
+function getEmailById(id) {
+    return storageService.load(KEY)
+    .then(emails => {
+        return emails.find(email => email.id === id)
+    })
+}
 
+function getEmailIdx(id) {
+    return storageService.load(KEY)
+    .then(emails => {
+        return emails.findIndex(email => email.id === id)
+    })
+}
 
-function updateEmailRead(id) {
-    getEmailById(id)
-        .then(email => email.isRead = true)
-        .then()
+function deleteEmail(id){
+    getEmailIdx(id)
+    .then( idx => {
+        idx
+        storageService.load(KEY)
+        .then(emails => {
+            emails.splice(idx,1)
+            return emails
+        })
+        .then( emails => {
+            storageService.store(KEY, emails)
+        })
+    })
 }
 
 function getEmails() {
@@ -42,7 +71,7 @@ function getEmails() {
             subject: 'fdfds',
             body: "mi est eros convallis auctor arcu dapibus himenaeos",
             time: Date.now(),
-            isRead: true,
+            isRead: false,
             type: 'Inbox'
         }
             ,
@@ -70,7 +99,7 @@ function getEmails() {
             subject: 'fasfas',
             body: "mi est eros convallis auctor arcu dapibus himenaeos",
             time: Date.now(),
-            isRead: true,
+            isRead: false,
             type: 'Inbox'
         },
         {
@@ -105,5 +134,8 @@ function getEmails() {
 
 export default {
     query,
-    getEmailById
+    getEmailById,
+    updateEmailRead,
+    getEmailIdx,
+    deleteEmail
 }
