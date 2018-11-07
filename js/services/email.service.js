@@ -70,13 +70,10 @@ function addComposedMail(newEmail) {
             if (idx >= 0) {
                 storageService.load(KEY)
                 .then(emails => {
-                    emails.splice(idx, 1)
+                    emails[idx] = newEmail
                     return emails
                 }).then(emails => {
-                    emails.push(newEmail)
                     console.log(emails)
-                    return emails
-                }).then(emails => {
                     storageService.store(KEY, emails)
                 })
             } else {

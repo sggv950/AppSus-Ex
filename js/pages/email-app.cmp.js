@@ -8,10 +8,11 @@ export default {
     name: 'emailapp',
     template: `
         <section>
-        <router-link exact :to="composeEmailLink">New Message</router-link> 
-        <router-link exact to="/email/">Emails</router-link>
- 
+            <router-link exact to="/"><button>Appsus</button></router-link>
+            <router-link exact to="/keep/"><button>Notes</button></router-link>
+            
             <h1>email-app</h1>
+            <router-link exact :to="composeEmailLink"><button>New Message</button></router-link> 
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>
                 <email-list v-if="emails" :mails="emails"></email-list>
