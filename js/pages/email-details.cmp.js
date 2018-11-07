@@ -9,9 +9,11 @@ export default {
     // props:['email'],
     template: `
         <section v-if="email">
-            <h1>{{email.subject}}</h1>
+            <h2>From: {{email.from}}</h2>
+            <h1>Subject: {{email.subject}}</h1>
             <h4>{{email.body}}</h4>
             <button><router-link to="/email">Back</router-link></button>
+            <button @click="deleteThisEmail"><router-link to="/email">Delete Email</router-link></button>
         </section>
     `,
     data() {
@@ -20,13 +22,15 @@ export default {
         }
     },
     methods: {
-        
-            
+        deleteThisEmail(){
+            emailService.deleteEmail(this.email.id)
+        }
         
     },
     created() {
         var emailId = this.$route.params.id;
-        emailService.getEmailById(emailId)
+        emailService.updateEmailRead(emailId)
             .then(email => this.email = email)
+        
     }
 }
