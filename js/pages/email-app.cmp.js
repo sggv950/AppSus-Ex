@@ -2,12 +2,13 @@ import emailService from '../services/email.service.js'
 import emailList from '../cmps/email-list.cmp.js';
 import emailFilter from '../cmps/email-filter.cmp.js';
 import emailDetails from './email-details.cmp.js'
+import utilService from '../services/util.service.js'
 
 export default {
     name: 'emailapp',
     template: `
         <section>
-        <router-link exact to="/email/compose">New Message</router-link> 
+        <router-link exact :to="composeEmailLink">New Message</router-link> 
         <router-link exact to="/email/">Emails</router-link>
  
             <h1>email-app</h1>
@@ -33,6 +34,12 @@ export default {
         setFilter(filter) {
         emailService.query(filter)
         .then(emails => this.emails = emails)
+        }
+    },
+    computed:{
+        composeEmailLink(){
+            var newId = utilService.makeId();
+            return `/email/compose/${newId}`
         }
     },
     components: {

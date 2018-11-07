@@ -8,9 +8,11 @@ import keepApp from './pages/keep-app.cmp.js'
 const routes = [
     {path: '/', component: appsus},
     {path: '/email', component: emailApp},
-    {path: '/email/compose', component: emailCompose},
+    {path: '/keep', component: keepApp},
+    {path: '/email/compose/', component: emailCompose, children:[
+      {path: ':id', component: emailCompose}
+    ]},
     {path: '/email/:id', component: emailDetails},
-    {path: '/keep', component: keepApp}
   ];
 
 Vue.use(VueRouter);
