@@ -42,7 +42,7 @@ function getEmails(){
         {
           id: utilService.makeId(),
           from: "metus hendrerit",
-          subject:'',
+          subject:'asdasd asdsad',
           body: "mi est eros convallis auctor arcu dapibus himenaeos",
           time:Date.now(),
           isRead: false,   

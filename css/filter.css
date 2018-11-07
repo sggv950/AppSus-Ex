@@ -1,3 +1,15 @@
 .email-filter{
     text-align: center;
 }
+
+.preview-name{
+width: 150px;
+}
+
+.preview-subject{
+width: 500px;
+}
+
+.preview-time{
+    width: 100px;
+}

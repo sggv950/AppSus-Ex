@@ -9,7 +9,7 @@ export default {
         <section>
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>
-                <email-list :mails="emails" @filtered="setFilter"></email-list>
+                <email-list :mails="emails"></email-list>
             </div>
         </section>
     `,
