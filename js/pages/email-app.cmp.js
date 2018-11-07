@@ -10,7 +10,7 @@ export default {
             <h1>email-app</h1>
             <div class='email-app'>
                 <email-filter @filtered="setFilter"></email-filter>
-                <email-list :mails="emails" @filtered="setFilter"></email-list>
+                <email-list :mails="emails"></email-list>
             </div>
         </section>
     `,
