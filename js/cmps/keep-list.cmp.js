@@ -7,6 +7,8 @@ export default {
     props:['notes'],
     template: `
     <section class="notes-list-section">
+    <router-link exact to="/keep/composeimage/">composeImage</router-link> 
+    <router-link exact to="/keep/composetodo/">composeTodo</router-link> 
     <component v-for="currNote in notes"
     :is="currNote.type"    
     :note="currNote" :key="currNote.id">
