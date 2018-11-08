@@ -23,6 +23,7 @@ export default {
             }
             this.result =  progCount / this.progmail.length
             this.result = parseInt(this.result * 100);
+            if(!this.result) return '';
             return this.result+'%'
         },
         

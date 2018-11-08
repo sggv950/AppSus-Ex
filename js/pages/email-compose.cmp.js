@@ -6,8 +6,8 @@ export default {
     template: `
     <section class="email-preview-item">
         <div>
-            From:<input class="compose-from" ref="myInput" type="text" v-model="newMail.from"><br>
-            Subject:<input class="compose-subject"  type="text" v-model="newMail.subject"><br>
+            To: <input class="compose-from" ref="myInput" type="text" v-model="newMail.to"><br>
+            Subject: <input class="compose-subject"  type="text" v-model="newMail.subject"><br>
             <textarea class="rating-text" rows="20" cols="100" v-model="newMail.body"></textarea>
         </div>
         <router-link to="/email"><button @click="saveDraft">Save Draft</button></router-link>
@@ -20,7 +20,7 @@ export default {
         return {
             newMail: {
                 id: '',
-                from: '',
+                to: '',
                 subject: '',
                 time: Date.now(),
                 body: '',

@@ -14,13 +14,14 @@ export default {
         Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
         </div>
         </div>
+        <router-link to="/keep"><button @click="saveNote" >Add Note</button></router-link>
         </section>
         
     `,
     data() {
         return {
             note: {
-                id: utilService.makeId(),
+                id: '',
                 type: "keepText",
                 text:'',
                 time: moment().subtract(10, 'days').calendar(),
@@ -29,7 +30,11 @@ export default {
             }
         }
     },
-    methods:{
+    methods: {
+        saveNote(){
+            console.log(this.note);
+            keepService.addSaveNote(this.note)
+        }
     },
     computed: {
         getClass(){
@@ -39,4 +44,7 @@ export default {
             }    
     }
 },
+created(){
+    this.id = utilService.makeId();
+}
 }

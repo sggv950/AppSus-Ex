@@ -164,6 +164,77 @@ function getEmails() {
         time: Date.now(),
         isRead: false,
         type: 'Inbox'
+    },
+    {
+        id: utilService.makeId(),
+        to:'',
+        from: "david bruho",
+        subject: 'fdfds',
+        body: "mi est eros convallis auctor arcu dapibus himenaeos",
+        time: Date.now(),
+        isRead: false,
+        type: 'Inbox'
+    }
+        ,
+    {
+        id: utilService.makeId(),
+        to:'',
+        from: "amir meyer",
+        subject: 'ice Cream',
+        body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
+        time: Date.now(),
+        isRead: true,
+        type: 'Outbox'
+    },
+    {
+        id: utilService.makeId(),
+        to:'',
+        from: "metus hendrerit",
+        subject: 'asdasd asdsad',
+        body: "mi est eros convallis auctor arcu dapibus himenaeos",
+        time: Date.now(),
+        isRead: false,
+        type: 'Inbox'
+    },
+    {
+        id: utilService.makeId(),
+        to:'saassa fffff',
+        from: "",
+        subject: 'fasfas',
+        body: "mi est eros convallis auctor arcu dapibus himenaeos",
+        time: Date.now(),
+        isRead: false,
+        type: 'Drafts'
+    },
+    {
+        id: utilService.makeId(),
+        to:'',
+        from: "asd dsa",
+        subject: 'asdasdsa',
+        body: "mi est eros convallis auctor arcu dapibus himenaeos",
+        time: Date.now(),
+        isRead: false,
+        type: 'Inbox'
+    },
+    {
+        id: utilService.makeId(),
+        to:'hererit aaaa',
+        from: "",
+        subject: 'asdasdad',
+        body: "mi est eros convallis auctor arcu dapibus himenaeos",
+        time: Date.now(),
+        isRead: false,
+        type: 'Outbox'
+    },
+    {
+        id: utilService.makeId(),
+        to:'bobo chichi',
+        from: "",
+        subject: 'asdasdsad',
+        body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",
+        time: Date.now(),
+        isRead: false,
+        type: 'Outbox'
     }
     ]
 }
