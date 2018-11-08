@@ -97,7 +97,11 @@ function getKeepList() {
             time: moment().subtract(10, 'days').calendar(),
             image:'',
             color:'red',
+<<<<<<< HEAD
             backgroundColor:'blue',
+=======
+            backgroundColor:'blue'
+>>>>>>> 1b34c566a93cc1ea2bb54d749fe90a39e2019775
         },{
             id: utilService.makeId(),
             type: "keepText",
@@ -105,7 +109,11 @@ function getKeepList() {
             time: moment().subtract(10, 'days').calendar(),
             image:'',
             color:'red',
+<<<<<<< HEAD
             backgroundColor:'blue',
+=======
+            backgroundColor:'blue'
+>>>>>>> 1b34c566a93cc1ea2bb54d749fe90a39e2019775
         },
         {
             id: utilService.makeId(),
@@ -113,10 +121,16 @@ function getKeepList() {
             text:'Shopping',
             todos: [{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false},{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false},{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false}],
             time: moment().subtract(10, 'days').calendar(),
+<<<<<<< HEAD
             image:'',
             color:'red',
             backgroundColor:'blue',
         },
+=======
+            image:'', 
+            color:'red',
+            backgroundColor:'blue'       },
+>>>>>>> 1b34c566a93cc1ea2bb54d749fe90a39e2019775
         {
             id: utilService.makeId(),
             type: "keepImage",
@@ -124,7 +138,11 @@ function getKeepList() {
             time: moment().subtract(10, 'days').calendar(),
             image:'https://www.eggnutritioncenter.org/content/themes/wojo-theme/assets/dist/img/eggfacts.png',
             color:'red',
+<<<<<<< HEAD
             backgroundColor:'blue',
+=======
+            backgroundColor:'blue'
+>>>>>>> 1b34c566a93cc1ea2bb54d749fe90a39e2019775
                 },
         ]
 }

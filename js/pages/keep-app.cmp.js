@@ -5,7 +5,7 @@ import keepList from '../cmps/keep-list.cmp.js'
 export default {
     name:'keepapp',
     template: `
-                <section>
+                <section class="keep-app">
                 <keep-filter @filtered="setFilter"></keep-filter>
                 <keep-list v-if="keeps" :notes="keeps"></keep-list>
                 </section>

@@ -4,19 +4,25 @@
 @import './keep-todo.css';
 @import './keep-text.css';
 @import './keep-compose-image.css';
-@import './keep-compose-text.css';
 
 
-    @font-face {
-        font-family: 'pattaya';
-        src: url("../fonts/Pattaya/Pattaya-Regular.ttf") format("truetype");
-    }
+@font-face {
+    font-family: 'pattaya';
+    src: url("../fonts/Pattaya/Pattaya-Regular.ttf") format("truetype");
+}
     
-*{
+.keep-app * {
     font-family: 'pattaya'
 }
 
-body{
+.keep-app {
     background: url('../img/notebook.jpg');
     background-repeat: no-repeat;
+    margin: 0 auto;
+    background-position: bottom;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
 }
