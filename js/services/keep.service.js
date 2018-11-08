@@ -31,6 +31,45 @@ function getNotesIdx(id) {
         })
 }
 
+function deleteNote(id) {
+    getNotesIdx(id)
+        .then(idx => {
+            idx
+            storageService.load(KEY)
+                .then(notes => {
+                    notes.splice(idx, 1)
+                    return notes
+                })
+                .then(notes => {
+                    storageService.store(KEY, notes)
+                })
+        })
+}
+
+function addSaveNote(currNote) {
+    getNotesIdx(currNote.id)
+    .then(idx => {
+        if (idx >= 0) {
+            storageService.load(KEY)
+            .then(notes => {
+                notes[idx] = currNote
+                return notes
+            }).then(notes => {
+                console.log('after edit', notes)
+                storageService.store(KEY, notes)
+            })
+        } else {
+            storageService.load(KEY)
+            .then(notes => {
+                notes.push(currNote)
+                console.log('new note', notes)
+                return notes
+            }).then(notes => {
+                storageService.store(KEY, notes)
+            })
+        }
+    })
+}
 
 function getKeepList() {
     return [{
@@ -82,5 +121,7 @@ function getKeepList() {
 export default {
     query,
     getNotesById,
-    getNotesIdx
+    getNotesIdx,
+    deleteNote,
+    addSaveNote
 }
