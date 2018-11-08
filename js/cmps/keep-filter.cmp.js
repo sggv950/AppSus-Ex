@@ -3,6 +3,7 @@ export default {
     <section class="keep-filter">
         <h3>Filter</h3>
         <select v-model="filter.type" @change="emitFilter">
+            <option value="">All</option>
             <option>text</option>
             <option>image</option>
             <option>todo</option>
@@ -15,7 +16,7 @@ export default {
         return {
             filter: {
                 keyword: '',
-                type: 'text',
+                type: '',
             }
         }
     },

@@ -1,1 +1,20 @@
 @import './keep-list.css';
+@import './note-list.css';
+@import './keep-image.css';
+@import './keep-todo.css';
+@import './keep-text.css';
+
+
+    @font-face {
+        font-family: 'pattaya';
+        src: url("../fonts/Pattaya/Pattaya-Regular.ttf") format("truetype");
+    }
+    
+*{
+    font-family: 'pattaya'
+}
+
+body{
+    background: url('../img/notebook.jpg');
+    background-repeat: no-repeat;
+}

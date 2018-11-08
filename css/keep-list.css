@@ -1,8 +1,18 @@
-.note-preview-item{
-border: 1px solid black;
-width: 150px;
-height: 250px;
-background-color: white;
+.note-text-item{
+background-color: #ffc;
 text-align: center;
-padding: 20px;
+}
+
+.note-todo-item{
+text-align: center;
+}
+
+.item{
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 11px 22px -4px rgba(0,0,0,0.19);
+}
+
+.note-todo-item{
+    background-color: #c0e6ff;
 }

@@ -1,0 +1,9 @@
+.note-text-time{
+    float:right;
+    margin: 5px;
+}
+
+.note-text-text{
+    margin-top: 10px;
+    padding: 15px;
+}

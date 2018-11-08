@@ -13,14 +13,12 @@ export default {
 ,
 data(){ 
     return{
-            type:'txt',
             keeps:null
 }
 },
 created() {
     keepService.query()
         .then(keeps => {
-            console.log(keeps)
             this.keeps = keeps
         })
 },

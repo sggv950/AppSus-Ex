@@ -1,0 +1,13 @@
+.note-image-item img{
+        max-width: 100%;
+        padding:5px;
+}
+
+.note-image-item{
+    background-color: wheat;
+    text-align: center;
+}
+
+.note-image-head{
+    margin:10px;
+}
