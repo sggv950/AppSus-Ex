@@ -9,12 +9,12 @@ export default {
     template: `
     <section>
         Unread mails:{{this.counter}}
-    <div class="email-preview-item">
+    <div class="email-preview-headline">
         <div class="preview-name inline" @click.stop="sortByName">From</div>
         <div class="preview-subject inline" @click="sortBySubject">Subject</div>
         <div class="preview-time inline" @click="sortByTime">At</div>
     </div>
-        <email-preview v-for="currentMail in mails" :mail="currentMail" :key="currentMail.id"></email-preview>
+        <email-preview class="email-preview-item" v-for="currentMail in mails" :mail="currentMail" :key="currentMail.id"></email-preview>
         <email-status :progmail="mails" @count="showCount"></email-status>
     </section>
         

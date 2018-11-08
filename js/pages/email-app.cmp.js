@@ -11,12 +11,13 @@ export default {
             <router-link exact to="/"><button>Appsus</button></router-link>
             <router-link exact to="/keep/"><button>Notes</button></router-link>
             
-            <h1>email-app</h1>
-            <router-link exact :to="composeEmailLink" tag="button">New Message</router-link> 
             <div class='email-app'>
-                <email-filter @filtered="setFilter"></email-filter>
+                <h1>email-app</h1>
+                <nav>
+                    <router-link class="compose-email-link" exact :to="composeEmailLink" tag="button"><i class="fas fa-envelope"></i></router-link> 
+                    <email-filter @filtered="setFilter"></email-filter>
+                </nav>
                 <email-list v-if="emails" :mails="emails"></email-list>
-                
             </div>
         </section>
     `,
