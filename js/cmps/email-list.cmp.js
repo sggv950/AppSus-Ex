@@ -29,6 +29,7 @@ export default {
     methods:{
     showCount(count){
         if(count <= 0) return 0;
+<<<<<<< HEAD
         this.counter = count
     },
     sortByName(){
@@ -62,6 +63,9 @@ export default {
             return a.time - b.time;
           });
           storageService.store('emailsKey',this.mails)
+=======
+        this.counter = count;
+>>>>>>> f069c2fada40fe9669fe705ab8b5eaa9953411cb
     }
     },
     components: {

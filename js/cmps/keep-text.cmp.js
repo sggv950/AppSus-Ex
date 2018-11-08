@@ -4,7 +4,8 @@ export default {
     template: `
     <div class="note-text-item item" :style="getClass">
         <div class="note-text-time">{{note.time}}</div><br>
-        <button class="edit-button" @click="pin">pin</button>
+        <button class="edit-button" @click.stop.prevent="pin">pin</button>
+        <button class="delete-button" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
         <div class="note-text-text">{{note.text}}</div>
     </div>
     `,
@@ -19,6 +20,9 @@ export default {
 methods:{
     pin(){
         this.$emit('pin', this.note) 
+     },
+     deleteNote(){
+         this.$emit('delete-note', this.note)
      }
 }
 }

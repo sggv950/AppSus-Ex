@@ -32,16 +32,14 @@ function getNotesIdx(id) {
 }
 
 function deleteNote(id) {
-    getNotesIdx(id)
+   return getNotesIdx(id)
         .then(idx => {
-            idx
-            storageService.load(KEY)
+            return storageService.load(KEY)
                 .then(notes => {
+                    console.log('service before' , notes)
                     notes.splice(idx, 1)
+                    storageService.store(KEY, notes);
                     return notes
-                })
-                .then(notes => {
-                    storageService.store(KEY, notes)
                 })
         })
 }
@@ -134,6 +132,5 @@ export default {
     getNotesById,
     getNotesIdx,
     deleteNote,
-    addSaveNote,
-    KEY
+    addSaveNote
 }
