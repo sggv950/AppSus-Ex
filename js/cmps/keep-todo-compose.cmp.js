@@ -1,4 +1,5 @@
 import utilService from '../services/util.service.js'
+import keepService from '../services/keep.service.js'
 
 export default {
     name: 'composimage',
@@ -19,37 +20,45 @@ export default {
         <button @click="">clearImage</button>
         </div>
         </div>
+        <router-link to="/keep"><button @click="saveNote" >Add Note</button></router-link>
         </section>
         
     `,
     data() {
         return {
             note: {
-                id: utilService.makeId(),
-                head:'',
+                id: '',
+                head: '',
                 type: "keepImage",
-                text:'',
+                text: '',
                 todos: [],
                 time: moment().subtract(10, 'days').calendar(),
                 image: '',
-                backgroundColor:'white',
-                color:'black'
+                backgroundColor: 'white',
+                color: 'black'
             }
         }
     },
-    methods:{
-        addTodo(){
+    methods: {
+        addTodo() {
             this.note.todos.push(this.note.text)
             this.note.text = ''
             console.log(this.note.todos)
+        },
+        saveNote() {
+            console.log(this.note);
+            keepService.addSaveNote(this.note)
         }
     },
     computed: {
-        getClass(){
+        getClass() {
             return {
-            color : this.note.color,
-            backgroundColor: this.note.backgroundColor
-            }    
+                color: this.note.color,
+                backgroundColor: this.note.backgroundColor
+            }
+        }
+    },
+    created() {
+        this.note.id = utilService.makeId();
     }
-},
 }

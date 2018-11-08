@@ -7,7 +7,7 @@ import utilService from '../services/util.service.js'
 export default {
     name: 'emailapp',
     template: `
-        <section>
+        <section class="email-app">
             <router-link exact to="/"><button>Appsus</button></router-link>
             <router-link exact to="/keep/"><button>Notes</button></router-link>
             

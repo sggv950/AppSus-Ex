@@ -1,4 +1,5 @@
 import utilService from '../services/util.service.js'
+import keepService from '../services/keep.service.js'
 
 export default {
     name: 'compostext',
@@ -23,28 +24,28 @@ export default {
             note: {
                 id: '',
                 type: "keepText",
-                text:'',
+                text: '',
                 time: moment().subtract(10, 'days').calendar(),
-                backgroundColor:'white',
-                color:'black'
+                backgroundColor: 'white',
+                color: 'black'
             }
         }
     },
     methods: {
-        saveNote(){
+        saveNote() {
             console.log(this.note);
             keepService.addSaveNote(this.note)
         }
     },
     computed: {
-        getClass(){
+        getClass() {
             return {
-            color : this.note.color,
-            backgroundColor: this.note.backgroundColor
-            }    
+                color: this.note.color,
+                backgroundColor: this.note.backgroundColor
+            }
+        }
+    },
+    created() {
+        this.note.id = utilService.makeId();
     }
-},
-created(){
-    this.id = utilService.makeId();
-}
 }
