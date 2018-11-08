@@ -87,6 +87,8 @@ function getKeepList() {
             text: 'My Owl',
             time: moment().subtract(10, 'days').calendar(),
             image:'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/cafb806e-cf0d-41f7-a008-604d297b875d/08-owl-opt-small.jpg',
+            color:'red',
+            backgroundColor:'blue',
         },{
             id: utilService.makeId(),
             type: "keepTodo",
@@ -131,5 +133,6 @@ export default {
     getNotesById,
     getNotesIdx,
     deleteNote,
-    addSaveNote
+    addSaveNote,
+    KEY
 }

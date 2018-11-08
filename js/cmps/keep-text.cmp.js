@@ -4,7 +4,7 @@ export default {
     template: `
     <div class="note-text-item item" :style="getClass">
         <div class="note-text-time">{{note.time}}</div><br>
-        <button class="edit-button">pin</button>
+        <button class="edit-button" @click="pin">pin</button>
         <div class="note-text-text">{{note.text}}</div>
     </div>
     `,
@@ -15,6 +15,11 @@ export default {
             backgroundColor: this.note.backgroundColor
             }    
     }
+},
+methods:{
+    pin(){
+        this.$emit('pin', this.note) 
+     }
 }
 }
 
