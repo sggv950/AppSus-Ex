@@ -96,6 +96,7 @@ function addOrReplaceDraft(id, email) {
 function getEmails() {
     return [{
         id: utilService.makeId(),
+        to:'',
         from: "david bruho",
         subject: 'fdfds',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -106,6 +107,7 @@ function getEmails() {
         ,
     {
         id: utilService.makeId(),
+        to:'',
         from: "amir meyer",
         subject: 'ice Cream',
         body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
@@ -115,6 +117,7 @@ function getEmails() {
     },
     {
         id: utilService.makeId(),
+        to:'',
         from: "metus hendrerit",
         subject: 'asdasd asdsad',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -124,6 +127,7 @@ function getEmails() {
     },
     {
         id: utilService.makeId(),
+        to:'',
         from: "fafa asas",
         subject: 'fasfas',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -133,6 +137,7 @@ function getEmails() {
     },
     {
         id: utilService.makeId(),
+        to:'',
         from: "asd dsa",
         subject: 'asdasdsa',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -142,6 +147,7 @@ function getEmails() {
     },
     {
         id: utilService.makeId(),
+        to:'',
         from: "metus hendrerit",
         subject: 'asdasdad',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -151,6 +157,7 @@ function getEmails() {
     },
     {
         id: utilService.makeId(),
+        to:'',
         from: "bruho chichi",
         subject: 'asdasdsad',
         body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",

@@ -1,6 +1,8 @@
 import keepTodo from './keep-todo.cmp.js'
 import keepText from './keep-text.cmp.js'
 import keepImage from './keep-image.cmp.js'
+import keepService from '../services/keep.service.js';
+import storageService from '../services/storage.service.js'
 
 export default {
     name:'noteslist',
@@ -14,6 +16,7 @@ export default {
             :key="currNote.id"
             @click.native="selectNote(currNote.type, currNote.id)"
             to="noteDetailsLink"
+            @pin="onPin"
             ></component>
     
        
@@ -21,12 +24,16 @@ export default {
         
     `,
     created(){
-        console.log(this.notes)
     },
     methods:{
         selectNote(noteType, noteId){
             this.$router.push(`/keep/compose/${noteType}/${noteId}`)
             
+        },
+        onPin(note){
+            var first = note;
+            this.notes.sort(function(x,y){ return x == first ? -1 : y == first ? 1 : 0; });
+            storageService.store('keepKey',this.notes)
         }
     },
     computed: {
@@ -38,5 +45,5 @@ export default {
         keepTodo,
         keepImage,
         keepText
-}
+        }
 }
