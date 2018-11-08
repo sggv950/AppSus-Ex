@@ -17,9 +17,8 @@ export default {
             @click.native="selectNote(currNote.type, currNote.id)"
             to="noteDetailsLink"
             @pin="onPin"
-            ></component>
-    
-       
+            @delete-note="moveDeleteNote">
+        </component>
     </section>
         
     `,data(){
@@ -39,6 +38,9 @@ export default {
             this.notes.sort(function(x,y){ return x == first ? -1 : y == first ? 1 : 0; });
             storageService.store('keepKey',this.notes)
         },
+        moveDeleteNote(note){
+            return this.$emit('move-delete-note', note);
+        }
     },
     computed: {
         noteDetailsLink(){

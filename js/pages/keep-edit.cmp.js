@@ -31,6 +31,7 @@ export default {
             </div>
             
             <router-link to="/keep"><button @click="saveNote" >Save Note</button></router-link>
+            <router-link to="/keep"><button @click="deleteNote" >Delete Note</button></router-link>
             
         </section>
     `,
@@ -53,6 +54,9 @@ export default {
         saveNote(){
             console.log(this.note);
             keepService.addSaveNote(this.note)
+        },
+        deleteNote(){
+            keepService.deleteNote(this.note.id)
         }
     },
     computed: {

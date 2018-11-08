@@ -21,7 +21,8 @@ export default {
     },
     methods:{
     showCount(count){
-        this.counter = count
+        if(count <= 0) return 0;
+        this.counter = count;
     }
     },
     components: {

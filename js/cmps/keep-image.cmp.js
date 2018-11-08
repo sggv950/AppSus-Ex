@@ -6,9 +6,10 @@ export default {
     template: `
     <div class="note-image-item item"  :style="getClass">
     <div class="note-text-time">{{note.time}}</div><br>
-    <button class="edit-button" @click="pin">pin</button>
-        <div class="note-image-head">{{note.text}}</div>
-        <img :src="note.image">
+    <button class="edit-button" @click.stop.prevent="pin">pin</button>
+    <button class="delete-button" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
+    <div class="note-image-head">{{note.text}}</div>
+    <img :src="note.image">
     </div>
     `,
         computed:{
@@ -22,6 +23,9 @@ export default {
            methods:{
                pin(){
                   this.$emit('pin', this.note) 
+               },
+               deleteNote(){
+                   this.$emit('delete-note', this.note)
                }
            }
         }    
