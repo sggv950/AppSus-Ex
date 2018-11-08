@@ -6,9 +6,9 @@ export default {
     <div class="note-todo-item item"  :style="getClass">
     <div class="note-text-time">{{note.time}}</div><br>
     <button class="edit-button" @click="pin">pin</button>
-    <div class="note-image-head">{{note.text}}</div>
+    <div class="note-image-head">{{note.head}}</div>
         <ul>
-        <li v-for="todo in note.todos" currTodo="todo">{{todo.todo}}</li>
+        <li v-for="todo in note.todos" currTodo="todo">{{todo}}</li>
         </ul>
     </div>
     `,

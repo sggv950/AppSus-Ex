@@ -55,14 +55,12 @@ function addSaveNote(currNote) {
                 notes[idx] = currNote
                 return notes
             }).then(notes => {
-                console.log('after edit', notes)
                 storageService.store(KEY, notes)
             })
         } else {
             storageService.load(KEY)
             .then(notes => {
                 notes.push(currNote)
-                console.log('new note', notes)
                 return notes
             }).then(notes => {
                 storageService.store(KEY, notes)
@@ -92,8 +90,9 @@ function getKeepList() {
         },{
             id: utilService.makeId(),
             type: "keepTodo",
-            text:'ToDo',
-            todos: [{todo:'playCard',isDone:false},{todo:'playSoccer',isDone:false},{todo:'PlayBasketball',isDone:false}],
+            head:'ToDo',
+            text: '',
+            todos: ['playCard','playSoccer','PlayBasketball'],
             time: moment().subtract(10, 'days').calendar(),
             image:'',
             color:'red',
@@ -110,8 +109,9 @@ function getKeepList() {
         {
             id: utilService.makeId(),
             type: "keepTodo",
-            text:'Shopping',
-            todos: [{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false},{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false},{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false}],
+            head:'Shopping',
+            text: '',
+            todos: ['bread','Margarina','Milk','bread','Margarina','Milk'],
             time: moment().subtract(10, 'days').calendar(),
             image:'',
             color:'red',

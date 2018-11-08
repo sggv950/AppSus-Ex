@@ -8,6 +8,11 @@ export default {
             <div v-if="note.type === 'keepText'" :style="getClass">
                 <h2>Time {{note.head}}</h2>
                 <textarea v-model="note.text"></textarea>
+                <div>
+                    Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
+                    Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
+                    <button >clearImage</button>
+                </div>
             </div>
 
             
@@ -24,10 +29,15 @@ export default {
             
             <div class="note-todo-item item" v-if="note.type === 'keepTodo' " :style="getClass">
                 <div class="note-text-time">{{note.time}}</div><br>
-                <div class="note-image-head">{{note.text}}</div>
+                <div class="note-image-head">{{note.head}}</div>
                 <ul>
-                    <li v-for="todo in note.todos" currTodo="todo">{{todo.todo}}</li>
+                    <li v-for="todo in note.todos" currTodo="todo">{{todo}}</li>
                 </ul>
+                <div>
+                    Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
+                    Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
+                    <button >clearImage</button>
+                </div>
             </div>
             
             <router-link to="/keep"><button @click="saveNote" >Save Note</button></router-link>
@@ -51,7 +61,6 @@ export default {
     },
     methods: {
         saveNote(){
-            console.log(this.note);
             keepService.addSaveNote(this.note)
         }
     },
@@ -67,7 +76,6 @@ export default {
         }
     },
     created() {
-        console.log('params', this.$route.params);
         this.note.id = this.$route.params.id;
         this.note.type = this.$route.params.type;
         keepService.getNotesById(this.note.id)
@@ -76,6 +84,5 @@ export default {
                     this.note = note;
                 }
             })
-        console.log(this.note)
     }
 }

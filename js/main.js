@@ -1,7 +1,4 @@
 'use strict';
-
-console.log('main.js up');
-
 import router from './routes.js'
 
 

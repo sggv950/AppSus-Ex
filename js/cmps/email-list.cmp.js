@@ -1,5 +1,7 @@
 import emailPreview from './email-preview.cmp.js';
 import emailStatus from './email-status.cmp.js';
+import emailService from '../services/email.service.js';
+import storageService from '../services/storage.service.js'
 
 export default {
     name:'emaillist',
@@ -7,7 +9,12 @@ export default {
     template: `
     <section>
         Unread mails:{{this.counter}}
-        <email-preview v-for="currentMail in mails" :mail="currentMail"></email-preview>
+    <div class="email-preview-item">
+        <div class="preview-name inline" @click.stop="sortByName">From</div>
+        <div class="preview-subject inline" @click="sortBySubject">Subject</div>
+        <div class="preview-time inline" @click="sortByTime">At</div>
+    </div>
+        <email-preview v-for="currentMail in mails" :mail="currentMail" :key="currentMail.id"></email-preview>
         <email-status :progmail="mails" @count="showCount"></email-status>
     </section>
         
@@ -21,7 +28,40 @@ export default {
     },
     methods:{
     showCount(count){
+        if(count <= 0) return 0;
         this.counter = count
+    },
+    sortByName(){
+        this.mails.sort(function(a, b) {
+            var nameA = a.from.toUpperCase() // ignore upper and lowercase
+            var nameB = b.from.toUpperCase() // ignore upper and lowercase
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+    })
+    storageService.store('emailsKey',this.mails)
+},
+    sortBySubject(){
+        this.mails.sort(function(a, b) {
+            var nameA = a.subject.toUpperCase() // ignore upper and lowercase
+            var nameB = b.subject.toUpperCase() // ignore upper and lowercase
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+    })
+    storageService.store('emailsKey',this.mails)
+    },
+    sortByTime(){
+        this.mails.sort(function (a, b) {
+            return a.time - b.time;
+          });
+          storageService.store('emailsKey',this.mails)
     }
     },
     components: {

@@ -8,7 +8,7 @@ export default {
         <h1>New Text Note</h1>
     <div class="compose-new-text item" :style="getClass">
     <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
-    <textarea rows="8" cols="30" v-model="note.text"></textarea>
+    <textarea v-model="note.text"></textarea>
             </div>
     <div class="compose-image-btns">
         Text Color:<input class="newImage.color" type="color"  v-model="note.color" value="#ffffff"/>
@@ -33,7 +33,6 @@ export default {
     },
     methods: {
         saveNote() {
-            console.log(this.note);
             keepService.addSaveNote(this.note)
         }
     },

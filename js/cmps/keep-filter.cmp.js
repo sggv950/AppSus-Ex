@@ -1,7 +1,7 @@
 export default {
     template: `
     <section class="keep-filter">
-        <h3>Filter</h3>
+        <h3>keep</h3>
         <select v-model="filter.type" @change="emitFilter">
             <option value="">All</option>
             <option>text</option>

@@ -19,6 +19,7 @@ export default {
     },
     computed:{
         getProgress(){
+            this.progCount = 0;
             for (let i = 0; i< this.progmail.length; i++) {
                 if(this.progmail[i].isRead) this.progCount++
             }

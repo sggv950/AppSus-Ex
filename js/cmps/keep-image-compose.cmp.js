@@ -36,7 +36,6 @@ export default {
     },
     methods: {
         saveNote() {
-            console.log(this.note);
             keepService.addSaveNote(this.note)
         },
         clearImage(){

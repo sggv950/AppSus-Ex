@@ -31,7 +31,6 @@ export default {
     methods: {
         sendEmail() {
             this.newMail.type = 'Outbox';
-            console.log(this.newMail);
             emailService.addComposedMail(this.newMail);
         },
         saveDraft() {
@@ -40,7 +39,6 @@ export default {
         }
     },
     created() {
-        console.log(this.$route.params)
         this.newMail.id = this.$route.params.id;
         emailService.getEmailById(this.newMail.id)
         .then(email => {

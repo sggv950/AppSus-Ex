@@ -29,7 +29,7 @@ export default {
             note: {
                 id: '',
                 head: '',
-                type: "keepImage",
+                type: "keepTodo",
                 text: '',
                 todos: [],
                 time: moment().subtract(10, 'days').calendar(),
@@ -43,10 +43,9 @@ export default {
         addTodo() {
             this.note.todos.push(this.note.text)
             this.note.text = ''
-            console.log(this.note.todos)
         },
         saveNote() {
-            console.log(this.note);
+            console.log(this.note)
             keepService.addSaveNote(this.note)
         }
     },

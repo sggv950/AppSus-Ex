@@ -13,12 +13,11 @@ function query(filter = { keyword: '', type: 'Inbox', }) {
                 storageService.store(KEY, emails);
             }
             emailDB = emails
-            console.log(filter.type)
-            if(filter.type === 'true') return emailDB.filter(email => email.isRead)
-            else if(filter.type === 'false') return emailDB.filter(email => !email.isRead)
+            // if(filter.type === 'true') return emailDB.filter(email => email.isRead)
+            // else if(filter.type === 'false') return emailDB.filter(email => !email.isRead)
             return emailDB
             .filter(email => email.type.toUpperCase().includes(filter.type.toUpperCase()))
-            .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
+            .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
             
             // .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
         })
@@ -101,7 +100,7 @@ function getEmails() {
         from: "david bruho",
         subject: 'fdfds',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     }
@@ -112,7 +111,7 @@ function getEmails() {
         from: "amir meyer",
         subject: 'ice Cream',
         body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: true,
         type: 'Inbox'
     },
@@ -122,7 +121,7 @@ function getEmails() {
         from: "metus hendrerit",
         subject: 'asdasd asdsad',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -132,7 +131,7 @@ function getEmails() {
         from: "fafa asas",
         subject: 'fasfas',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -142,7 +141,7 @@ function getEmails() {
         from: "asd dsa",
         subject: 'asdasdsa',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -152,7 +151,7 @@ function getEmails() {
         from: "metus hendrerit",
         subject: 'asdasdad',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -162,7 +161,7 @@ function getEmails() {
         from: "bruho chichi",
         subject: 'asdasdsad',
         body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -172,7 +171,7 @@ function getEmails() {
         from: "david bruho",
         subject: 'fdfds',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     }
@@ -183,7 +182,7 @@ function getEmails() {
         from: "amir meyer",
         subject: 'ice Cream',
         body: "daslkdslajlskajdjaslkdskladlkasjdkasjkdjasldjaskjdlsajdlasjlksjaldjaskljlsajdkla",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: true,
         type: 'Outbox'
     },
@@ -193,7 +192,7 @@ function getEmails() {
         from: "metus hendrerit",
         subject: 'asdasd asdsad',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -203,7 +202,7 @@ function getEmails() {
         from: "",
         subject: 'fasfas',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Drafts'
     },
@@ -213,7 +212,7 @@ function getEmails() {
         from: "asd dsa",
         subject: 'asdasdsa',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Inbox'
     },
@@ -223,7 +222,7 @@ function getEmails() {
         from: "",
         subject: 'asdasdad',
         body: "mi est eros convallis auctor arcu dapibus himenaeos",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Outbox'
     },
@@ -233,7 +232,7 @@ function getEmails() {
         from: "",
         subject: 'asdasdsad',
         body: "dasdasdasdsadsadasdasge fas fa sf skaj  alskjd lksaj saldk jsadl jsadkl sja",
-        time: Date.now(),
+        time: moment().subtract(10, 'days').calendar(),
         isRead: false,
         type: 'Outbox'
     }
