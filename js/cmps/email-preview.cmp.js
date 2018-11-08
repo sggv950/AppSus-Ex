@@ -17,6 +17,9 @@ export default {
         emailDetailsLink() {
             if(this.mail.type === 'Drafts') {return `/email/compose/${this.mail.id}`}
             else {return `/email/${this.mail.id}`}
+        },
+        fixedTime(){
+            
         }
     }
 }
