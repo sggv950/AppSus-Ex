@@ -3,9 +3,9 @@ export default {
     props: ['note'],
     template: `
     <div class="note-text-item item" :style="getClass">
+    <button class="edit-button  edit-btn" @click.stop.prevent="pin"><i class="fas fa-thumbtack"></i></button>
+        <button class="delete-button  edit-btn" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
         <div class="note-text-time">{{note.time}}</div><br>
-        <button class="edit-button" @click.stop.prevent="pin">pin</button>
-        <button class="delete-button" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
         <div class="note-text-text">{{note.text}}</div>
     </div>
     `,

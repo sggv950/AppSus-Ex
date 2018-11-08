@@ -4,7 +4,7 @@ import keepService from '../services/keep.service.js'
 export default {
     name: 'composimage',
     template: `
-    <section>
+    <section class="backgroundimage">
     <h1>New todo List</h1>
     <div class="compose-new-todo item" :style="getClass">
     <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
@@ -17,7 +17,6 @@ export default {
     <div class="compose-image-btns">
         Text Color:<input class="newImage.color" type="color"  v-model="note.color" value="#ffffff"/>
         Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
-        <button @click="">clearImage</button>
         </div>
         </div>
         <router-link to="/keep"><button @click="saveNote" >Add Note</button></router-link>

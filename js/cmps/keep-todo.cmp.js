@@ -4,14 +4,15 @@ export default {
     props: ['note'],
     template: `
     <div class="note-todo-item item"  :style="getClass">
-    <div class="note-text-time">{{note.time}}</div><br>
-    <button class="edit-button" @click="pin">pin</button>
-    <button class="delete-button" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
+            <button class="edit-button  edit-btn" @click="pin"><i class="fas fa-thumbtack"></i></button>
+            <button class="delete-button  edit-btn" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
+        <div class="note-text-time">{{note.time}}</div><br>
+
     <div class="note-image-head">{{note.head}}</div>
         <ul>
         <li v-for="todo in note.todos" currTodo="todo">{{todo}}</li>
-        <div class="note-text-time">{{note.time}}</div><br>
     </div>
+
     `,
         computed:{
             getClass(){

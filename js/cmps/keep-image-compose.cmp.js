@@ -4,7 +4,7 @@ import keepService from '../services/keep.service.js'
 export default {
     name: 'composimage',
     template: `
-        <section>
+        <section class="backgroundimage">
             <h1>New IMAGE Note</h1>
             <div class="compose-new-image item" :style="getClass">
                 <input class="input-compose-image" type="text" v-model="note.text" placeholder="Enter headline"/>
