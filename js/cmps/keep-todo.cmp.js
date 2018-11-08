@@ -10,7 +10,6 @@ export default {
     <div class="note-image-head">{{note.head}}</div>
         <ul>
         <li v-for="todo in note.todos" currTodo="todo">{{todo}}</li>
-        <div class="note-text-time">{{note.time}}</div><br>
     </div>
     `,
         computed:{
