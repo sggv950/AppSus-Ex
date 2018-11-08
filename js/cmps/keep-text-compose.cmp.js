@@ -1,22 +1,17 @@
 import utilService from '../services/util.service.js'
 
 export default {
-    name: 'composimage',
+    name: 'compostext',
     template: `
     <section>
-    <h1>New todo List</h1>
-    <div class="compose-new-todo item" :style="getClass">
+        <h1>New Text Note</h1>
+    <div class="compose-new-text item" :style="getClass">
     <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
-    <input class="input-compose-image" type="text" v-model="note.text" placeholder="Enter todo"/>
-    <button class="add-todo-btn" @click="addTodo">Add Todo</button>
-        <ul>
-        <li v-for="todo in note.todos">{{todo}}</li>
-        </ul>
-    </div>
+    <textarea rows="8" cols="30" v-model="note.text"></textarea>
+            </div>
     <div class="compose-image-btns">
         Text Color:<input class="newImage.color" type="color"  v-model="note.color" value="#ffffff"/>
         Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
-        <button @click="">clearImage</button>
         </div>
         </div>
         </section>
@@ -26,23 +21,15 @@ export default {
         return {
             note: {
                 id: utilService.makeId(),
-                head:'',
-                type: "keepImage",
+                type: "keepText",
                 text:'',
-                todos: [],
                 time: moment().subtract(10, 'days').calendar(),
-                image: '',
                 backgroundColor:'white',
                 color:'black'
             }
         }
     },
     methods:{
-        addTodo(){
-            this.note.todos.push(this.note.text)
-            this.note.text = ''
-            console.log(this.note.todos)
-        }
     },
     computed: {
         getClass(){

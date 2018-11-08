@@ -8,7 +8,6 @@ export default {
             <option>Drafts</option>
         </select>
         <input type="text" v-model="filter.keyword" @input="emitFilter" placeholder="search by name" />
-
     </section>
     `,
     data() {

@@ -8,8 +8,10 @@ export default {
             <option>image</option>
             <option>todo</option>
         </select>
-        <input type="text" v-model="filter.keyword" @input="emitFilter" placeholder="search by keyword" />
-
+        <input type="text" v-model="filter.keyword" @input="emitFilter" placeholder="search by keyword" /><br>
+        <router-link class="add-btn" exact to="/keep/composetext/" type="button">Add Text</router-link> 
+        <router-link class="add-btn" exact to="/keep/composeimage/" type="button">Add image</router-link> 
+        <router-link class="add-btn" exact to="/keep/composetodo/" type="button">Add List</router-link> 
     </section>
     `,
     data() {

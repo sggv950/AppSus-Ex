@@ -7,9 +7,6 @@ export default {
     props:['notes'],
     template: `
     <section class="notes-list-section">
-        
-        <router-link exact to="/keep/composeimage/">composeImage</router-link> 
-        <router-link exact to="/keep/composetodo/">composeTodo</router-link> 
         <component 
             v-for="currNote in notes" 
             :is="currNote.type" 
@@ -17,7 +14,7 @@ export default {
             :key="currNote.id"
             @click.native="selectNote(currNote.type, currNote.id)"
             to="noteDetailsLink"
-            >
+            ></component>
     
        
     </section>

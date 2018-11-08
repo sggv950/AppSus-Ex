@@ -1,24 +1,27 @@
+import utilService from '../services/util.service.js'
 
 export default {
     name: 'composimage',
     template: `
+        <section>
+        <h1>New IMAGE Note</h1>
     <div class="compose-new-image item" :style="getClass">
-    <input class="input-compose-image" type="text" v-model="newImage.text" placeholder="Enter headline"/>
-    <input class="input-compose-image" type="text" v-model="newImage.image" placeholder="Enter link for image"/>
+    <input class="input-compose-image" type="text" v-model="note.text" placeholder="Enter headline"/>
+    <input class="input-compose-image" type="text" v-model="note.image" placeholder="Enter link for image"/>
         <img class="compose-image-item" :src="getImage">
         <div class="compose-image-btns">
-        Text Color:<input class="newImage.color" type="color"  v-model="newImage.color" value="#ffffff"/>
-        Background Color:<input type="color" v-model="newImage.backgroundColor" value="#ffffff" />
+        Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
+        Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
         <button @click="">clearImage</button>
         <button @click="addImage">Add Note</button>
         </div>
         </div>
-        
+        </section>
     `,
     data() {
         return {
-            newImage: {
-                id: '',
+            note: {
+                id: utilService.makeId(),
                 type: "keepImage",
                 text: '',
                 time: moment().subtract(10, 'days').calendar(),
@@ -30,12 +33,12 @@ export default {
     },
     computed: {
         getImage() {
-                return this.newImage.image
+                return this.note.image
         },
         getClass(){
             return {
-            color : this.newImage.color,
-            backgroundColor: this.newImage.backgroundColor
+            color : this.note.color,
+            backgroundColor: this.note.backgroundColor
             }    
     }
 },

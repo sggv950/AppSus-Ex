@@ -6,6 +6,7 @@ import keepEdit from './pages/keep-edit.cmp.js'
 import keepApp from './pages/keep-app.cmp.js'
 import keepImageCompose from './cmps/keep-image-compose.cmp.js'
 import keepTodoCompose from './cmps/keep-todo-compose.cmp.js'
+import keepTextCompose from './cmps/keep-text-compose.cmp.js'
 
 
 const routes = [
@@ -15,6 +16,7 @@ const routes = [
     {path: '/keep/compose/:type/:id', component: keepEdit},
     {path: '/keep/composeimage/', component: keepImageCompose},
     {path: '/keep/composetodo/', component: keepTodoCompose},
+    {path: '/keep/composetext/', component: keepTextCompose},
     {path: '/email/compose/', component: emailCompose, children:[
       {path: ':id', component: emailCompose}
     ]},
