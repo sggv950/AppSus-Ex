@@ -40,6 +40,8 @@ function getKeepList() {
             text: 'dont forget tell shimon he cant go on like this, its really to much already...',
             time: moment().subtract(10, 'days').calendar(),
             image:'',
+            color:'red',
+            backgroundColor:'blue',
         },{
             id: utilService.makeId(),
             type: "keepImage",
