@@ -6,8 +6,8 @@ export default {
     template: `
         <section>
             <div v-if="note.type === 'keepText'">
-            <h2>Time {{note.time}}</h2>
-            <textarea v-model="note.text"></textarea>
+                <h2>Time {{note.head}}</h2>
+                <textarea v-model="note.text"></textarea>
             </div>
 
             
@@ -19,7 +19,6 @@ export default {
                     Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
                     Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
                     <button >clearImage</button>
-                    <button>Add Note</button>
                 </div>
             </div>
             
@@ -30,12 +29,16 @@ export default {
                     <li v-for="todo in note.todos" currTodo="todo">{{todo.todo}}</li>
                 </ul>
             </div>
+            
+            <router-link to="/keep"><button @click="saveNote" >Save Note</button></router-link>
+            
         </section>
     `,
     data() {
         return {
             note: {
                 id: '',
+                head: '',
                 type: '',
                 text: '',
                 time: moment().subtract(10, 'days').calendar(),
@@ -44,6 +47,12 @@ export default {
                 color:'black',
                 todos: []
             }
+        }
+    },
+    methods: {
+        saveNote(){
+            console.log(this.note);
+            keepService.addSaveNote(this.note)
         }
     },
     computed: {
