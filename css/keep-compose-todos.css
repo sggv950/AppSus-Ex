@@ -1,0 +1,22 @@
+.add-todo-btn{
+    margin-top:10px;
+}
+
+.todo-list-compose{
+height: 220px;
+}
+.add-todo-btn{
+    font-family: 'pattaya';
+    border-radius: 10px;
+    background: #599fa1;
+    color: white;
+    border: 1px solid black;
+    box-shadow: 5px 11px 22px -4px rgba(0,0,0,0.19);
+    text-decoration: none;
+    padding: 3px;
+    transition: all .3s;
+}
+
+.note-compose-todo{
+    margin-top:10px;
+}

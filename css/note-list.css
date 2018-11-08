@@ -3,9 +3,19 @@
 }
 
 .notes-list-section{
-    display:grid;
-    grid-template-columns: repeat( auto-fill, minmax(140px, 1fr));
-    grid-gap: 20px;
-    grid-template-rows: repeat( auto-fill, minmax(200px, 1fr));
+    display:flex;
+    flex-direction: column;
     margin-top:20px;
+}
+
+@media (min-width: 400px) {
+    .notes-list-section{
+        display:inline-block;
+        column-count: 3;
+        margin-top:20px;
+        }
+        .item{
+            max-width: 800px;
+            margin:auto;
+        }    
 }

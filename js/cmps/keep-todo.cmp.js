@@ -3,7 +3,8 @@ export default {
     name: 'notepreview',
     props: ['note'],
     template: `
-    <div class="note-todo-item item"  :style="getClass">
+    <section class="todo-page">
+    <div class="note-todo-item note"  :style="getClass">
             <button class="edit-button  edit-btn" @click="pin"><i class="fas fa-thumbtack"></i></button>
             <button class="delete-button  edit-btn" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
         <div class="note-text-time">{{note.time}}</div><br>
@@ -11,7 +12,9 @@ export default {
     <div class="note-image-head">{{note.head}}</div>
         <ul>
         <li v-for="todo in note.todos" currTodo="todo">{{todo}}</li>
-    </div>
+        </ul>
+        </div>
+    </section>
 
     `,
         computed:{

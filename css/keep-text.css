@@ -6,4 +6,9 @@
 .note-text-text{
     margin-top: 10px;
     padding: 15px;
+    font-size: 20px;
+}
+
+.compose-new-text{
+    background-color:#ffffcc;
 }

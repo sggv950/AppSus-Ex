@@ -5,17 +5,23 @@ export default {
     name: 'compostext',
     template: `
     <section class="backgroundimage">
-        <h1>New Text Note</h1>
-    <div class="compose-new-text item" :style="getClass">
-    <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
-    <textarea v-model="note.text"></textarea>
+        <div class="logo">Keep<i class="fas fa-paperclip"></i></div>
+        <router-link class="add-btn" exact to="/keep/composetext/" type="button"><i class="fas fa-font"></i></router-link> 
+        <router-link class="add-btn" exact to="/keep/composeimage/" type="button"><i class="fas fa-camera-retro"></i></router-link> 
+        <router-link class="add-btn" exact to="/keep/composetodo/" type="button"><i class="fas fa-list-ol"></i></router-link> 
+        <div class="compose-head">New Text Note</div>
+        <div class="compose-new-text item" :style="getClass">
+             <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
+             <textarea class="text-area-new" v-model="note.text" placeholder="enter text here"></textarea>
+            <div class="compose-image-btns">
+                <input class="newImage.color" type="color" id="color" v-model="note.color" value="#ffffff" :style="{opacity:0}"/>
+                <label for="color"><i class="fas fa-palette"></i></label>
+                <label for="bgcolor"><i class="fas fa-fill-drip"></i></label>
+                <input type="color" id="bgcolor" v-model="note.backgroundColor" value="#ffffff" :style="{opacity:0}"/>
             </div>
-    <div class="compose-image-btns">
-        Text Color:<input class="newImage.color" type="color"  v-model="note.color" value="#ffffff"/>
-        Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
         </div>
-        </div>
-        <router-link to="/keep"><button @click="saveNote" >Add Note</button></router-link>
+        <router-link class="add-btn" exact to="/keep/" type="button"><i class="fas fa-arrow-alt-circle-left"></i></router-link> 
+        <router-link to="/keep"><button @click="saveNote" class="add-btn">Add Note</button></router-link>
         </section>
         
     `,

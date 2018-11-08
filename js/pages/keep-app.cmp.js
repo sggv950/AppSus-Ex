@@ -6,8 +6,10 @@ export default {
     name: 'keepapp',
     template: `
         <section class="keep-app">
+        <div class="app-btns">
             <router-link exact to="/"><button>Appsus</button></router-link>
-            <router-link exact to="/email"><button>Email</button></router-link>
+        </div>    
+        <div class="logo">Keep<i class="fas fa-paperclip"></i></div>
             <keep-filter @filtered="setFilter"></keep-filter>
             <keep-list v-if="keeps" :notes="keeps" @move-delete-note="deleteNoteFromNotes"></keep-list>
         </section>

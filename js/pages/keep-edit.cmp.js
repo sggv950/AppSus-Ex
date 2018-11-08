@@ -4,44 +4,54 @@ export default {
     name: 'keeptextcompose',
     // props:['note'],
     template: `
-        <section>
-            <div v-if="note.type === 'keepText'" :style="getClass">
-                <h2>Time {{note.head}}</h2>
-                <textarea v-model="note.text"></textarea>
-                <div>
-                    Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
-                    Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
-                    <button >clearImage</button>
+        <section class="backgroundimage">
+        <div class="logo">Keep<i class="fas fa-paperclip"></i></div>
+        <router-link class="add-btn" exact to="/keep/" type="button"><i class="fas fa-arrow-alt-circle-left"></i></router-link> 
+        <div class="compose-head">Edit Note</div>
+            <div v-if="note.type === 'keepText'">
+                <div class="compose-new-text item" :style="getClass">
+                <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
+                <textarea class="text-area-new" v-model="note.text" placeholder="enter text here"></textarea>
+                <div class="compose-image-btns">
+                    <input class="newImage.color" type="color" id="color" v-model="note.color" value="#ffffff" :style="{opacity:0}"/>
+                    <label for="color"><i class="fas fa-palette"></i></label>
+                    <label for="bgcolor"><i class="fas fa-fill-drip"></i></label>
+                    <input type="color" id="bgcolor" v-model="note.backgroundColor" value="#ffffff" :style="{opacity:0}"/>
                 </div>
-            </div>
-
+                </div>
+</div>
             
             <div class="compose-new-image item" :style="getClass" v-if="note.type === 'keepImage'">
                 <input class="input-compose-image" type="text" v-model="note.text" placeholder="Enter headline"/>
                 <input class="input-compose-image" type="text" v-model="note.image" placeholder="Enter link for image"/>
                 <img class="compose-image-item" :src="getImage">
-                <div>
-                    Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
-                    Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
-                    <button >clearImage</button>
+                <div class="compose-image-btns">
+                <label class="color-compose-img" for="color"><i class="fas fa-palette"></i></label>   
+                <label for="bgcolor"><i class="fas fa-fill-drip"></i></label>   
+                <i class="fas fa-ban" @click="clearImage"></i>
+                <input class="note.color" type="color" id="color" v-model="note.color" value="#ffffff" :style="{opacity:0}"/>
+                <input type="color" id="bgcolor" v-model="note.backgroundColor" value="#ffffff" :style="{opacity:0}"/>
                 </div>
             </div>
             
-            <div class="note-todo-item item" v-if="note.type === 'keepTodo' " :style="getClass">
+            <div class="note-todo-item item note-compose-todo" v-if="note.type === 'keepTodo' " :style="getClass">
                 <div class="note-text-time">{{note.time}}</div><br>
-                <div class="note-image-head">{{note.head}}</div>
+                <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
+                <input class="input-compose-image" type="text" v-model="note.text" placeholder="Enter todo"/>
+                <button class="add-todo-btn" @click="addTodo">Add Todo</button>
+                <div class="todo-list-compose">    
                 <ul>
-                    <li v-for="todo in note.todos" currTodo="todo">{{todo}}</li>
-                </ul>
-                <div>
-                    Text Color:<input class="note.color" type="color"  v-model="note.color" value="#ffffff"/>
-                    Background Color:<input type="color" v-model="note.backgroundColor" value="#ffffff" />
-                    <button >clearImage</button>
+                    <li v-for="todo in note.todos">{{todo}}</li>
+                    </ul>
+                      </div>
+                <input class="newImage.color" type="color" id="color" v-model="note.color" value="#ffffff" :style="{opacity:0}"/>
+                <label for="color"><i class="fas fa-palette"></i></label>
+                <label for="bgcolor"><i class="fas fa-fill-drip"></i></label>
+                <input type="color" id="bgcolor" v-model="note.backgroundColor" value="#ffffff" :style="{opacity:0}"/>
                 </div>
             </div>
-            
-            <router-link to="/keep"><button @click="saveNote" >Save Note</button></router-link>
-            <router-link to="/keep"><button @click="deleteNote" >Delete Note</button></router-link>
+            <router-link to="/keep"><button @click="saveNote" class="add-btn">Add Note</button></router-link>
+            <router-link to="/keep"><button @click="deleteNote" class="add-btn" >Delete Note</button></router-link>
             
         </section>
     `,
@@ -66,6 +76,13 @@ export default {
         },
         deleteNote(){
             keepService.deleteNote(this.note.id)
+        },
+        addTodo() {
+            this.note.todos.push(this.note.text)
+            this.note.text = ''
+        },
+        clearImage(){
+            this.note.image = '../img/imglink.jpg'
         }
     },
     computed: {

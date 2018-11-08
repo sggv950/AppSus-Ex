@@ -1,0 +1,16 @@
+.fas{
+    cursor: pointer;
+    color:black;
+    transition: all .3s
+}
+
+.fas:hover{
+    color:#599fa1;
+    
+}
+
+.text-area-new{
+    margin-top: 10px;
+    width: 98%;
+    height: 290px;
+}

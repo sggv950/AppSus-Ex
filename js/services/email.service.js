@@ -13,8 +13,8 @@ function query(filter = { keyword: '', type: 'Inbox', }) {
                 storageService.store(KEY, emails);
             }
             emailDB = emails
-            // if(filter.type === 'true') return emailDB.filter(email => email.isRead)
-            // else if(filter.type === 'false') return emailDB.filter(email => !email.isRead)
+            if(filter.type === 'true') return emailDB.filter(email => email.isRead)
+            else if(filter.type === 'false') return emailDB.filter(email => !email.isRead)
             return emailDB
             .filter(email => email.type.toUpperCase().includes(filter.type.toUpperCase()))
             .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
