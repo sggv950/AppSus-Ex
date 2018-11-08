@@ -1,3 +1,4 @@
+import emailService from '../services/email.service.js'
 
 export default {
     name: 'emailpreview',
@@ -14,7 +15,8 @@ export default {
     `,
     computed: {
         emailDetailsLink() {
-            return `/email/${this.mail.id}`
+            if(this.mail.type === 'Drafts') {return `/email/compose/${this.mail.id}`}
+            else {return `/email/${this.mail.id}`}
         }
     }
 }
