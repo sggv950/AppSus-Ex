@@ -96,12 +96,16 @@ function getKeepList() {
             todos: [{todo:'playCard',isDone:false},{todo:'playSoccer',isDone:false},{todo:'PlayBasketball',isDone:false}],
             time: moment().subtract(10, 'days').calendar(),
             image:'',
+            color:'red',
+            backgroundColor:'blue',
         },{
             id: utilService.makeId(),
             type: "keepText",
             text: 'i forget to tell nimrod that i like baklawa',
             time: moment().subtract(10, 'days').calendar(),
             image:'',
+            color:'red',
+            backgroundColor:'blue',
         },
         {
             id: utilService.makeId(),
@@ -109,13 +113,18 @@ function getKeepList() {
             text:'Shopping',
             todos: [{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false},{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false},{todo:'bread',isDone:false},{todo:'Margarina',isDone:false},{todo:'Milk',isDone:false}],
             time: moment().subtract(10, 'days').calendar(),
-            image:'',        },
+            image:'',
+            color:'red',
+            backgroundColor:'blue',
+        },
         {
             id: utilService.makeId(),
             type: "keepImage",
             text: 'My Egg',
             time: moment().subtract(10, 'days').calendar(),
             image:'https://www.eggnutritioncenter.org/content/themes/wojo-theme/assets/dist/img/eggfacts.png',
+            color:'red',
+            backgroundColor:'blue',
                 },
         ]
 }

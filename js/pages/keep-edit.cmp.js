@@ -5,7 +5,7 @@ export default {
     // props:['note'],
     template: `
         <section>
-            <div v-if="note.type === 'keepText'">
+            <div v-if="note.type === 'keepText'" :style="getClass">
                 <h2>Time {{note.head}}</h2>
                 <textarea v-model="note.text"></textarea>
             </div>
@@ -22,7 +22,7 @@ export default {
                 </div>
             </div>
             
-            <div class="note-todo-item item" v-if="note.type === 'keepTodo' ">
+            <div class="note-todo-item item" v-if="note.type === 'keepTodo' " :style="getClass">
                 <div class="note-text-time">{{note.time}}</div><br>
                 <div class="note-image-head">{{note.text}}</div>
                 <ul>

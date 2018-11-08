@@ -6,6 +6,8 @@ export default {
             <option>Inbox</option>
             <option>Outbox</option>
             <option>Drafts</option>
+            <option value="true">Read</option>
+            <option value="false">Unread</option>
         </select>
         <input type="text" v-model="filter.keyword" @input="emitFilter" placeholder="search by name" />
     </section>
@@ -20,6 +22,7 @@ export default {
     },
     methods: {
         emitFilter() {
+            console.log(this.filter.type);
             this.$emit('filtered', this.filter)
         }
     },

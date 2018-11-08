@@ -6,13 +6,23 @@ export default {
     props:['mails'],
     template: `
     <section>
+        Unread mails:{{this.counter}}
         <email-preview v-for="currentMail in mails" :mail="currentMail"></email-preview>
-        <email-status :progmail="mails"></email-status>
+        <email-status :progmail="mails" @count="showCount"></email-status>
     </section>
         
-    `,
+    `,data(){
+        return{
+            counter:0
+        }
+    },
     created(){
         
+    },
+    methods:{
+    showCount(count){
+        this.counter = count
+    }
     },
     components: {
         emailPreview,

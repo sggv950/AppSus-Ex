@@ -22,7 +22,11 @@ export default {
        
     </section>
         
-    `,
+    `,data(){
+        return{
+            counter:0
+        }
+    },
     created(){
     },
     methods:{
@@ -34,7 +38,7 @@ export default {
             var first = note;
             this.notes.sort(function(x,y){ return x == first ? -1 : y == first ? 1 : 0; });
             storageService.store('keepKey',this.notes)
-        }
+        },
     },
     computed: {
         noteDetailsLink(){

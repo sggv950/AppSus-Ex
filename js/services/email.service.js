@@ -13,8 +13,13 @@ function query(filter = { keyword: '', type: 'Inbox', }) {
                 storageService.store(KEY, emails);
             }
             emailDB = emails
-            return emailDB.filter(email => email.type.toUpperCase().includes(filter.type.toUpperCase()))
-                .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
+            console.log(filter.type)
+            if(filter.type === 'true') return emailDB.filter(email => email.isRead)
+            else if(filter.type === 'false') return emailDB.filter(email => !email.isRead)
+            return emailDB
+            .filter(email => email.type.toUpperCase().includes(filter.type.toUpperCase()))
+            .filter(email => email.from.toUpperCase().includes(filter.keyword.toUpperCase()))
+            
             // .filter(email => email.subject.toUpperCase().includes(filter.keyword.toUpperCase()))
         })
 }
@@ -22,12 +27,10 @@ function query(filter = { keyword: '', type: 'Inbox', }) {
 function updateEmailRead(id) {
     return storageService.load(KEY)
         .then(emails => {
-            console.log('serviceeee', id)
             var currEmail = emails.find(email => {
                 return email.id === id
             })
-            console.log(currEmail)
-            if (currEmail.type === "Inbox" && !currEmail.is) {
+            if (currEmail.type === "Inbox" && !currEmail.isRead) {
                 currEmail.isRead = true;
                 storageService.store(KEY, emails)
             }
@@ -73,14 +76,12 @@ function addComposedMail(newEmail) {
                     emails[idx] = newEmail
                     return emails
                 }).then(emails => {
-                    console.log(emails)
                     storageService.store(KEY, emails)
                 })
             } else {
                 storageService.load(KEY)
                 .then(emails => {
                     emails.push(newEmail)
-                    console.log(emails)
                     return emails
                 }).then(emails => {
                     storageService.store(KEY, emails)
