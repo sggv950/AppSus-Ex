@@ -17,6 +17,21 @@ function query(filter={type:'',keyword:''}) {
         })
 }
 
+function getNotesById(id) {
+    return storageService.load(KEY)
+        .then(notes => {
+            return notes.find(note => note.id === id)
+        })
+}
+
+function getNotesIdx(id) {
+    return storageService.load(KEY)
+        .then(notes => {
+            return notes.findIndex(note => note.id === id)
+        })
+}
+
+
 function getKeepList() {
     return [{
             id: utilService.makeId(),
@@ -64,4 +79,6 @@ function getKeepList() {
 
 export default {
     query,
+    getNotesById,
+    getNotesIdx
 }
