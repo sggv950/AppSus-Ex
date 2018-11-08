@@ -43,8 +43,8 @@ export default {
                 text: '',
                 time: moment().subtract(10, 'days').calendar(),
                 image: '',
-                backgroundColor:'white',
-                color:'black',
+                backgroundColor:'',
+                color:'',
                 todos: []
             }
         }

@@ -14,11 +14,7 @@ export default {
             :key="currNote.id"
             @click.native="selectNote(currNote.type, currNote.id)"
             to="noteDetailsLink"
-<<<<<<< HEAD
             ></component>
-=======
-            > </component>
->>>>>>> b60027d9c8aff6f5656759c53c377b74fcc50351
     
        
     </section>
