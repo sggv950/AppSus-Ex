@@ -1,0 +1,12 @@
+.filter-input{
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 1px solid black;;
+}
+
+.filter-select{
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}

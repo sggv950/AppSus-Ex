@@ -1,8 +1,7 @@
 import keepTodo from './keep-todo.cmp.js'
 import keepText from './keep-text.cmp.js'
 import keepImage from './keep-image.cmp.js'
-import keepService from '../services/keep.service.js';
-import storageService from '../services/storage.service.js'
+import storageService from '../../services/storage.service.js'
 
 export default {
     name:'noteslist',

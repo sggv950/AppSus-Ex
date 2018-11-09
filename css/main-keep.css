@@ -6,9 +6,12 @@
 @import './keep-compose-image.css';
 @import './keep-compose-text.css';
 @import './keep-compose-todos.css';
+@import './keep-filter.css';
 
-
-
+@font-face{
+    font-family: 'righteous';
+    src: url('../fonts/righteous/Righteous-Regular.ttf');
+}
 
 @font-face {
     font-family: 'pattaya';
@@ -75,6 +78,12 @@ body{
     margin-left: 12px;
 }
 
+.logo-main{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
 ul{
     text-align: left;
 }
@@ -91,3 +100,8 @@ ul{
 *{
 page-break-inside: avoid;
 }
+
+.main-ham{
+    font-size: 20px;
+}
+

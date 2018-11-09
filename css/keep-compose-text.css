@@ -1,7 +1,9 @@
 .fas{
     cursor: pointer;
     color:black;
-    transition: all .3s
+    transition: all .3s;
+    font-size:30px;
+    margin:5px;
 }
 
 .fas:hover{
@@ -14,3 +16,12 @@
     width: 98%;
     height: 290px;
 }
+
+@media (min-width: 400px) {
+    .compose-new-text{
+        height: 760px;
+    }
+    .text-area-new{
+        height: 600px;
+    }
+    }

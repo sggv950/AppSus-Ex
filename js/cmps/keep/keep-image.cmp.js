@@ -5,8 +5,10 @@ export default {
     props: ['note'],
     template: `
     <div class="note-image-item note"  :style="getClass">
-    <button class="edit-button  edit-btn" @click.stop.prevent="pin"><i class="fas fa-thumbtack"></i></button>
-    <button class="delete-button  edit-btn" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
+    <div class="edit-buttons  edit-btns">
+            <button class="edit-button  edit-btn" @click.stop="pin"><i class="fas fa-thumbtack"></i></button>
+            <button class="delete-button  edit-btn" @click.stop.prevent="deleteNote"><i class="fas fa-trash-alt"></i></button>
+            </div>
     <div class="note-text-time">{{note.time}}</div><br>
     <div class="note-image-head">{{note.text}}</div>
     <img :src="note.image">

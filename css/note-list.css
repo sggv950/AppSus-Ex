@@ -17,5 +17,52 @@
         .item{
             max-width: 800px;
             margin:auto;
+        }  
+    .app-nav-hamburger{
+        display: none;
+    }
+    .btns-container{
+        margin-right: 10px;
+        position: unset;
+        justify-content: center;
+        flex-direction: row;
+        height: 40px;
+    }
+    
+    .app-nav-item{
+        background-color: black;
+        padding: 4px;
+        border-radius: 0px;
+        width: unset;
+        text-align: center;
+        margin-right: 10px;
+        height: 50px;
+        line-height: 50px;
+        font-size:20px;
+        transition: all .3s;
+        border:0;
+    }
+    .app-nav-item:hover{
+        color: green;
+        background-color: black;
+    }
+}
+@media (min-width: 700px) {
+    .notes-list-section{
+        column-count: 4;
+        }
+        .item{
+            max-width: 1000px;
+            margin:auto;
+        }    
+}
+
+@media (min-width: 700px) {
+    .notes-list-section{
+        column-count: 5;
+        }
+        .item{
+            max-width: 1000px;
+            margin:auto;
         }    
 }

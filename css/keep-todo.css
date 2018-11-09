@@ -1,3 +1,11 @@
 .todo-page{
     font-family: 'pattaya'
 }
+
+.note-todo-item{
+    text-align: left;
+}
+
+.note-image-head{
+    text-align: center;
+}

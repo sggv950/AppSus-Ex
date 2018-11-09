@@ -26,3 +26,13 @@
 .color-compose-img{
     margin-left: 100px;
 }
+
+
+@media (min-width: 400px) {
+.compose-new-image{
+    height: 760px;
+}
+.compose-image-item{
+    height: 600px;
+}
+}

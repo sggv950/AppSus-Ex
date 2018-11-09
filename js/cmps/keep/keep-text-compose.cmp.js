@@ -1,5 +1,5 @@
-import utilService from '../services/util.service.js'
-import keepService from '../services/keep.service.js'
+import utilService from '../../services/util.service.js'
+import keepService from '../../services/keep.service.js'
 
 export default {
     name: 'compostext',

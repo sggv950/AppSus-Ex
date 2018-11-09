@@ -1,4 +1,4 @@
-import keepService from '../services/keep.service.js'
+import keepService from '../../services/keep.service.js'
 
 export default {
     name: 'keeptextcompose',

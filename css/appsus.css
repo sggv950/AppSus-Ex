@@ -1,0 +1,78 @@
+.btns-container{
+    position: fixed;
+    height: 350px;
+    left:8%;
+    top:-50%;
+    transition: all .4s;
+}
+
+.app-nav-item{
+    background-color: #85a3ab;
+    border-radius: 10px;
+    width: 318px;
+    text-align: center;
+    height: 78px;
+    line-height: 78px;
+    text-decoration: none;
+    color: white;
+    font-size:40px;
+    border:1px solid white;
+    transition: all .3s;
+}
+
+.app-nav-item:hover{
+    background-color: #b9e2ee;
+}
+
+.isOpen{
+    top:5%;
+}
+
+.app-head-container{
+    font-family: 'righteous'
+}
+
+.app-logo{
+    margin-top: 5px;
+    margin-left: 10px;
+    color:white;
+}
+
+.app-nav-hamburger{
+    margin-right:10px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.app-nav-hamburger:hover{
+    background-color: rgb(143, 143, 143);
+}
+
+.fa-bars{
+    color:black;
+}
+
+.horsie{
+    color: green;
+}
+
+.app-head-container{
+    background-color: black;
+    height: 50px;
+}
+
+.hamburger-back-layer{
+    position: fixed;
+    opacity: 1;
+    background-color: grey;
+    opacity: 0.7;
+    height: 100vh;
+    width: 100%;
+}

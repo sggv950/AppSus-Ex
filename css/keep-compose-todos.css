@@ -20,3 +20,13 @@ height: 220px;
 .note-compose-todo{
     margin-top:10px;
 }
+
+
+@media (min-width: 400px) {
+    .compose-new-todo{
+        height: 760px;
+    }
+    .todo-list-compose{
+        height: 560px;
+    }
+}
