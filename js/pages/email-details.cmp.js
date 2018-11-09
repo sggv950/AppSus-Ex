@@ -8,12 +8,14 @@ export default {
     name: 'emaildetails',
     // props:['email'],
     template: `
-        <section v-if="email">
-            <h2>From: {{email.from}}</h2>
-            <h1>Subject: {{email.subject}}</h1>
-            <h4>{{email.body}}</h4>
-            <button><router-link to="/email">Back</router-link></button>
-            <button @click="deleteThisEmail"><router-link to="/email">Delete Email</router-link></button>
+        <section v-if="email" class="email-details">
+            <h3>From: {{email.from}}</h3>
+            <h4>At: {{email.time}}</h4>
+            <h3>Subject: {{email.subject}}</h3>
+            <p>{{email.body}}</p>
+            <router-link to="/email"><button class="controller-button"><i class="fas fa-backspace"></i></button></router-link>
+            <router-link  exact :to="composeEmailLink"><button class="controller-button"><i class="fas fa-reply"></i></button></router-link>
+            <router-link to="/email"><button @click="deleteThisEmail" class="controller-button"><i class="fas fa-trash-alt"></i></button></router-link>
         </section>
     `,
     data() {
@@ -26,6 +28,12 @@ export default {
             emailService.deleteEmail(this.email.id)
         }
         
+    },
+    computed:{
+        composeEmailLink(){
+            var newId = utilService.makeId();
+            return `/email/compose/${newId}/${this.email.from}/${this.email.subject}`
+        }
     },
     created() {
         var emailId = this.$route.params.id;

@@ -8,24 +8,28 @@ export default {
     name: 'emailapp',
     template: `
         <section class="email-app">
-            <div>
-            <i class="fas fa-envelope fa-5x "></i>
-            <router-link exact to="/"><button>Appsus</button></router-link>
-            <router-link exact to="/keep/"><button>Notes</button></router-link>
+            <div class="email-app-header">
+                <i class="fas fa-envelope fa-3x "></i>
+                <div>
+                    <router-link exact to="/"><i class="fas fa-compass fa-3x"></i></router-link>
+                    <router-link exact to="/keep/"><i class="fas fa-clipboard-list fa-3x"></i></router-link>
+                </div>
             </div>
             <div>
-                <nav>
-                    <router-link class="compose-email-link" exact :to="composeEmailLink" tag="button"><i class="fas fa-edit fa-3x"></i></router-link> 
-                    <email-filter @filtered="setFilter"></email-filter>
-                </nav>
-                <email-list v-if="emails" :mails="emails"></email-list>
+                <email-filter @filtered="setFilter"></email-filter>
+                <div class="email-compose-status">
+                    <button class="compose-email-button"><router-link  exact :to="composeEmailLink"><i class="fas fa-pen-alt fa-2x"></i></router-link></button> 
+                    <h4>Unread mails: {{this.counter}}</h4>
+                </div>
+                <email-list v-if="emails" :mails="emails" @show-count="showCount"></email-list>
             </div>
         </section>
     `,
     data() {
         return {
             emails: null,
-            selectedMail: null
+            selectedMail: null,
+            counter: 0
         }
     },
     created() {
@@ -37,6 +41,9 @@ export default {
         setFilter(filter) {
         emailService.query(filter)
         .then(emails => this.emails = emails)
+        },
+        showCount(counter){
+            this.counter = counter;
         }
     },
     computed:{

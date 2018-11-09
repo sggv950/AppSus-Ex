@@ -5,12 +5,11 @@ export default {
     props: ['mail'],
     template: `
 
-    <div class="email-preview-item">
+    <div class="email-preview-item" :class="{'email-read': mail.isRead}">
         <router-link :to="emailDetailsLink">
-            <div class="preview-name inline">{{mail.from}}</div>
+            <div class="preview-name inline">{{fixFromTo}}</div>
             <div class="preview-subject inline">{{mail.subject}}</div>
             <div class="preview-time inline">{{mail.time}}</div>
-            <div class="preview-body ">{{mail.body}}</div>
         </router-link>
     </div>
     `,
@@ -19,8 +18,11 @@ export default {
             if(this.mail.type === 'Drafts') {return `/email/compose/${this.mail.id}`}
             else {return `/email/${this.mail.id}`}
         },
-        fixedTime(){
-            
+        fixFromTo(){
+            var from = this.mail.from;
+            var to = this.mail.to;
+            if(!from) return to;
+            else return from;
         }
     }
 }
