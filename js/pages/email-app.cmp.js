@@ -8,13 +8,14 @@ export default {
     name: 'emailapp',
     template: `
         <section class="email-app">
+            <div>
+            <i class="fas fa-envelope fa-5x "></i>
             <router-link exact to="/"><button>Appsus</button></router-link>
             <router-link exact to="/keep/"><button>Notes</button></router-link>
-            
-            <div class='email-app'>
-                <h1>email-app</h1>
+            </div>
+            <div>
                 <nav>
-                    <router-link class="compose-email-link" exact :to="composeEmailLink" tag="button"><i class="fas fa-envelope"></i></router-link> 
+                    <router-link class="compose-email-link" exact :to="composeEmailLink" tag="button"><i class="fas fa-edit fa-3x"></i></router-link> 
                     <email-filter @filtered="setFilter"></email-filter>
                 </nav>
                 <email-list v-if="emails" :mails="emails"></email-list>

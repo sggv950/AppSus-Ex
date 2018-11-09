@@ -6,10 +6,11 @@ export default {
     template: `
 
     <div class="email-preview-item">
-    <router-link :to="emailDetailsLink">
-        <div class="preview-name inline">{{mail.from}}</div>
-        <div class="preview-subject inline">{{mail.subject}}</div>
-        <div class="preview-time inline">{{mail.time}}</div>
+        <router-link :to="emailDetailsLink">
+            <div class="preview-name inline">{{mail.from}}</div>
+            <div class="preview-subject inline">{{mail.subject}}</div>
+            <div class="preview-time inline">{{mail.time}}</div>
+            <div class="preview-body ">{{mail.body}}</div>
         </router-link>
     </div>
     `,
