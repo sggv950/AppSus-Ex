@@ -48,11 +48,6 @@ body{
     width: 100%;
 }
 
-@media (min-width: 400px) {
-    .keep-app {
-        height: 100vh;
-    }
-}    
 .backgroundimage{
     background: url('../img/notebook.jpg');
     background-repeat: no-repeat;
@@ -61,7 +56,7 @@ body{
     background-attachment: fixed;
     text-align: center;
     position: static;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     font-family: 'pattaya'
 }
@@ -112,4 +107,13 @@ page-break-inside: avoid;
 .main-ham{
     font-size: 20px;
 }
+
+@media (min-width: 400px) {
+    .keep-app {
+        height: 100vh;
+    }
+    .backgroundimage{
+        height: 100vh;
+    }
+}    
 

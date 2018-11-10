@@ -33,6 +33,7 @@ text-align: center;
     display: inline-block;
     transition: all .3s;
     font-size: 25px;
+    margin-bottom: 5px;
 }
 .add-btn:visited{
     text-decoration: none;
