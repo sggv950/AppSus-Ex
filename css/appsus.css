@@ -2,8 +2,9 @@
     position: fixed;
     height: 350px;
     left:8%;
-    top:-50%;
+    top:-1000px;
     transition: all .4s;
+    opacity: 0;
 }
 
 .app-nav-item{
@@ -26,6 +27,7 @@
 
 .isOpen{
     top:5%;
+    opacity: 1;
 }
 
 .app-head-container{
