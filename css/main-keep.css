@@ -21,6 +21,10 @@
 .keep-app * {
     font-family: 'pattaya'
 }
+.keep-app{
+    height: 100vh;
+}
+
 html{
     margin:0;
 }
@@ -40,9 +44,11 @@ body{
     background-position: bottom;
     background-attachment: fixed;
     text-align: center;
-    position: relative;
+    position: static;
     height: 100vh;
     width: 100%;
+    font-family: 'pattaya';
+    overflow : auto
 }
 
 .backgroundimage{
@@ -55,7 +61,8 @@ body{
     position: static;
     height: 100vh;
     width: 100%;
-    font-family: 'pattaya'
+    font-family: 'pattaya';
+    overflow : auto;
 }
 
 .edit-btn{
