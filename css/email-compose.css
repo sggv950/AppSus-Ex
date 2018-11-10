@@ -1,0 +1,35 @@
+.email-compose-item {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.rating-text{
+    width: 100%;
+    height: 60vh;
+    border-radius: 5px;
+    border: 3px solid lightblue;
+}
+
+
+.email-not-read {
+    color: blue;
+    background-color: snow;
+}
+
+.email-read {
+    color: black;
+    background-color: lightgray;
+}
+
+.compose-from, .compose-subject {
+    width: 50%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.compose-from:focus, .compose-subject:focus {
+    border-radius: 5px;
+    border: 3px solid lightblue;
+}
+

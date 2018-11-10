@@ -1,0 +1,7 @@
+.email-details{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.email-details > h3 {
+    border-bottom: 2px solid black;
+}
