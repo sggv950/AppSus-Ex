@@ -30,7 +30,7 @@ export default {
             <div>
                 <email-filter @filtered="setFilter"></email-filter>
                 <div class="email-compose-status">
-                    <button class="compose-email-button"><router-link  exact :to="composeEmailLink"><i class="fas fa-pen-alt fa-2x"></i></router-link></button> 
+                    <button class="compose-email-button" title="compose new email"><router-link  exact :to="composeEmailLink"><i class="fas fa-pen-alt fa-2x"></i></router-link></button> 
                     <h4>Unread mails: {{this.counter}}</h4>
                 </div>
                 <email-list v-if="emails" :mails="emails" @show-count="showCount"></email-list>

@@ -13,9 +13,9 @@ export default {
             <h4>At: {{email.time}}</h4>
             <h3>Subject: {{email.subject}}</h3>
             <p>{{email.body}}</p>
-            <router-link to="/email"><button class="controller-button"><i class="fas fa-backspace"></i></button></router-link>
-            <router-link  exact :to="composeEmailLink"><button class="controller-button"><i class="fas fa-reply"></i></button></router-link>
-            <router-link to="/email"><button @click="deleteThisEmail" class="controller-button"><i class="fas fa-trash-alt"></i></button></router-link>
+            <router-link to="/email"><button class="controller-button" title="back"><i class="fas fa-backspace"></i></button></router-link>
+            <router-link  exact :to="composeEmailLink"><button class="controller-button" title="reply"><i class="fas fa-reply"></i></button></router-link>
+            <router-link to="/email"><button @click="deleteThisEmail" class="controller-button" title="delete email"><i class="fas fa-trash-alt"></i></button></router-link>
         </section>
     `,
     data() {

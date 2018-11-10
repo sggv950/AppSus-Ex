@@ -10,9 +10,9 @@ export default {
             <input class="compose-subject"  type="text" v-model="newMail.subject" placeholder="Subject:"><br>
             <textarea class="rating-text" v-model="newMail.body"></textarea>
         </div>
-        <router-link to="/email"><button class="controller-button"><i class="fas fa-backspace"></i></button></router-link>
-        <router-link to="/email"><button @click="saveDraft" class="controller-button"><i class="fas fa-save"></i></button></router-link>
-        <router-link to="/email"><button @click="sendEmail" class="controller-button"><i class="fas fa-paper-plane"></i></button></router-link>
+        <router-link to="/email"><button class="controller-button"><i class="fas fa-backspace" title="back"></i></button></router-link>
+        <router-link to="/email"><button @click="saveDraft" class="controller-button" title="save draft"><i class="fas fa-save"></i></button></router-link>
+        <router-link to="/email"><button @click="sendEmail" class="controller-button" title="send"><i class="fas fa-paper-plane"></i></button></router-link>
     </section>
     `
     ,
