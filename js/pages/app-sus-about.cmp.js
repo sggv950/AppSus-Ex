@@ -26,7 +26,7 @@ export default {
 <h1 class="about-head">About</h1>
 <p>hello our names is Amir and Assaf and we made two apps for you, the one is email app the second is notes keep app.
 the vision is to stop the wars and bring world peace through technology.
-we hope you'ill enjoy our apps and have the time of you life like we do.</p>
+we hope you'ill enjoy our apps and have the time of your life like we do.</p>
 </div>
 </section>
     `,
