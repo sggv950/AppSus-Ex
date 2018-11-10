@@ -140,4 +140,6 @@ color:green;
     height: 100vh;
     background: url('../img/bg.jpg');
     background-size: auto;
+    overflow : auto;
+    background-attachment: fixed;
 }
