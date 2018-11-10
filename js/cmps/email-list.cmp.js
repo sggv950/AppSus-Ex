@@ -9,9 +9,9 @@ export default {
     template: `
     <section>
         <div class="email-preview-headline" v-if="mails.length">
-            <div class="preview-name inline" @click.stop="sortByName">From / To</div>
-            <div class="preview-subject inline" @click="sortBySubject">Subject</div>
-            <div class="preview-time inline" @click="sortByTime">At</div>
+            <div class="preview-name inline" @click.stop="sortByName" :style="{cursor:'pointer'}">From / To</div>
+            <div class="preview-subject inline" @click="sortBySubject"  :style="{cursor:'pointer'}">Subject</div>
+            <div class="preview-time inline" @click="sortByTime"  :style="{cursor:'pointer'}">At</div>
         </div>
         <email-preview class="email-preview-item" v-for="currentMail in mails" :mail="currentMail" :key="currentMail.id"></email-preview>
         

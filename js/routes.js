@@ -7,10 +7,12 @@ import keepApp from './pages/keep/keep-app.cmp.js'
 import keepImageCompose from './cmps/keep/keep-image-compose.cmp.js'
 import keepTodoCompose from './cmps/keep/keep-todo-compose.cmp.js'
 import keepTextCompose from './cmps/keep/keep-text-compose.cmp.js'
+import appSusAbout from './pages/app-sus-about.cmp.js'
 
 
 const routes = [
     {path: '/', component: appsus},
+    {path: '/about', component: appSusAbout},
     {path: '/email', component: emailApp},
     {path: '/keep', component: keepApp},
     {path: '/keep/compose/:type/:id', component: keepEdit},

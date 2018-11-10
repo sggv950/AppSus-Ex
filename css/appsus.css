@@ -76,3 +76,62 @@
     height: 100vh;
     width: 100%;
 }
+
+.appsus-btn{
+    width: 90%;
+    height: 280px;
+    background-color: red;
+    margin: 13px auto;
+    text-align: center;
+    line-height: 280px;
+    border-radius: 10px;
+    box-shadow: 5px 11px 22px -4px rgba(0,0,0,0.19);
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.appsus-btn:hover{
+    height: 285px;
+    width: 92%;
+}
+.email-btn-app{
+    background: url('../img/email.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    margin: 0 auto;
+    text-align: center;
+    margin-top:15px;
+    background-color: #f5b836;
+}
+
+.keep-btn-app{
+    background: url('../img/notes.jpg');
+    margin: 0 auto;
+    background-position: center center;  
+    margin-top:15px;
+    background-size: cover;
+}
+
+@media (min-width: 400px) {
+.apps-container{
+    max-width: 1000px;
+    margin: auto;
+}
+.appsus-btn{
+    width: 90%;
+    height: 400px;
+}
+.appsus-btn:hover{
+    height: 420px
+}
+.keep-btn-app{
+    background-size: contain;
+}
+}
+
+.app-section{
+    height: 100vh;
+    background: url('../img/bg.jpg');
+    background-size: auto;
+}

@@ -8,13 +8,25 @@ export default {
     name: 'emailapp',
     template: `
         <section class="email-app">
-            <div class="email-app-header">
-                <i class="fas fa-envelope fa-3x "></i>
-                <div>
-                    <router-link exact to="/"><i class="fas fa-compass fa-3x"></i></router-link>
-                    <router-link exact to="/keep/"><i class="fas fa-clipboard-list fa-3x"></i></router-link>
+        <div class="hamburger-back-layer" v-if="isOpen" @click="isOpen=!isOpen"></div>
+        <header class="app-header">
+        <div class="app-head-container flex space-between">
+            <router-link exact to="/">
+            <div class="app-logo">App<i class="fas fa-horse horsie" :style="{color:'green'}"></i></div>
+            </router-link>
+
+
+        <nav class="app-nav-container email-container-nav">
+                <button @click="isOpen=!isOpen" class="app-nav-hamburger"><i class="fas fa-bars main-ham" :style="{color:'black'}"></i></button>
+                <div class="btns-container flex space-around direction-column"
+                :class="{isOpen:isOpen}">    
+                    <router-link exact to="/email/" class="app-nav-item">Emails</router-link> 
+                    <router-link exact to="/keep/" class="app-nav-item">keep</router-link>
+                    <router-link exact to="/about/" class="app-nav-item">About</router-link>
                 </div>
-            </div>
+            </nav>
+        </div>
+    </header>
             <div>
                 <email-filter @filtered="setFilter"></email-filter>
                 <div class="email-compose-status">
@@ -29,7 +41,8 @@ export default {
         return {
             emails: null,
             selectedMail: null,
-            counter: 0
+            counter: 0,
+            isOpen : false
         }
     },
     created() {

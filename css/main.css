@@ -3,5 +3,25 @@
 @import './helpers.css';
 @import './status.css';
 @import './appsus.css';
+@import './appsus-about.css';
 
+.app-logo{
+    transition: all .3s;
+}
 
+.app-logo:hover{
+    color:green;
+}
+
+.app-nav-hamburger{
+    margin-right:10px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s;
+}

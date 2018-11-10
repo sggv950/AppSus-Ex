@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
+/* nav */
+.email-container-nav{
+    height: 50px;
+}
+
 .email-app {
     font-family: 'Roboto Mono', monospace;
     background-image: url('../img/email-background.jpg');
