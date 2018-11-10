@@ -21,11 +21,13 @@ height: 190px;
     margin-top:10px;
 }
 
+.compose-new-todo{
+    background-color: #c0e6ff;
+}
 
 @media (min-width: 400px) {
     .compose-new-todo{
         height: 760px;
-        background-color: #c0e6ff;
     }
     .todo-list-compose{
         height: 560px;
