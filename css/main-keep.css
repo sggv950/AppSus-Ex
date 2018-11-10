@@ -21,6 +21,10 @@
 .keep-app * {
     font-family: 'pattaya'
 }
+.keep-app{
+    height: 100vh;
+}
+
 html{
     margin:0;
 }
@@ -35,16 +39,20 @@ body{
 }
 .keep-app {
     background: url('../img/notebook.jpg');
-    background-repeat: no-repeat;
     margin: 0 auto;
     background-position: bottom;
-    background-attachment: fixed;
+    background-attachment: scroll;
     text-align: center;
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
+@media (min-width: 400px) {
+    .keep-app {
+        height: 100vh;
+    }
+}    
 .backgroundimage{
     background: url('../img/notebook.jpg');
     background-repeat: no-repeat;
