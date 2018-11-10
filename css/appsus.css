@@ -131,6 +131,9 @@
 .keep-btn-app{
     background-size: contain;
 }
+.btns-container{
+    opacity: 1;
+}
 }
 
 .app-section{
