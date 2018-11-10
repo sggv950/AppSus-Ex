@@ -1,6 +1,6 @@
-import emailService from '../services/email.service.js'
-import storageService from '../services/storage.service.js'
-import utilService from '../services/util.service.js'
+import emailService from '../../services/email.service.js'
+import storageService from '../../services/storage.service.js'
+import utilService from '../../services/util.service.js'
 
 'use strict';
 

@@ -1,0 +1,18 @@
+.email-preview-headline {
+    margin-top: 10px; 
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.email-preview-item {
+    background-color: snow;
+    padding: 5px 0;
+    margin: 3px 0;
+    border: 2px solid gray;
+    color: black;
+}
+
+.email-preview-item:hover{
+    background-color: rgb(230, 230, 230);
+}
+

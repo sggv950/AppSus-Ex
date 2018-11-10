@@ -1,8 +1,8 @@
-import emailService from '../services/email.service.js'
-import emailList from '../cmps/email-list.cmp.js';
-import emailFilter from '../cmps/email-filter.cmp.js';
+import emailService from '../../services/email.service.js'
+import emailList from '../../cmps/email/email-list.cmp.js';
+import emailFilter from '../../cmps/email/email-filter.cmp.js';
 import emailDetails from './email-details.cmp.js'
-import utilService from '../services/util.service.js'
+import utilService from '../../services/util.service.js'
 
 export default {
     name: 'emailapp',

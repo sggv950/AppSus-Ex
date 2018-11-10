@@ -1,4 +1,4 @@
-import emailApp from './email-app.cmp.js';
+import emailApp from './email/email-app.cmp.js';
 import keepApp from './keep/keep-app.cmp.js'
 
 export default {

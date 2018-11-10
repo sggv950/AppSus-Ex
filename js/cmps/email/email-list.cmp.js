@@ -1,7 +1,7 @@
 import emailPreview from './email-preview.cmp.js';
 import emailStatus from './email-status.cmp.js';
-import emailService from '../services/email.service.js';
-import storageService from '../services/storage.service.js'
+import emailService from '../../services/email.service.js';
+import storageService from '../../services/storage.service.js'
 
 export default {
     name:'emaillist',
