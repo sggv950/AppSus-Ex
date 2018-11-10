@@ -18,7 +18,9 @@ const routes = [
     {path: '/keep/composetodo/', component: keepTodoCompose},
     {path: '/keep/composetext/', component: keepTextCompose},
     {path: '/email/compose/', component: emailCompose, children:[
-      {path: ':id', component: emailCompose}
+      {path: ':id', component: emailCompose, children: [
+        {path: ':from/:subject', component: emailCompose}
+      ]},
     ]},
     {path: '/email/:id', component: emailDetails},
   ];
