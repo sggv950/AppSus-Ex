@@ -34,7 +34,7 @@ export default {
                 </div>
             </div>
             
-            <div class="note-todo-item item note-compose-todo" v-if="note.type === 'keepTodo' " :style="getClass">
+            <div class="compose-new-todo item note-compose-todo" v-if="note.type === 'keepTodo' " :style="getClass">
                 <div class="note-text-time">{{note.time}}</div><br>
                 <input class="input-compose-image" type="text" v-model="note.head" placeholder="Enter headline"/>
                 <input class="input-compose-image" type="text" v-model="note.text" placeholder="Enter todo"/>
@@ -44,12 +44,13 @@ export default {
                     <li v-for="todo in note.todos">{{todo}}</li>
                     </ul>
                       </div>
-                <input class="newImage.color" type="color" id="color" v-model="note.color" value="#ffffff" :style="{opacity:0}"/>
-                <label for="color"><i class="fas fa-palette"></i></label>
-                <label for="bgcolor"><i class="fas fa-fill-drip"></i></label>
-                <input type="color" id="bgcolor" v-model="note.backgroundColor" value="#ffffff" :style="{opacity:0}"/>
-                </div>
-            </div>
+                      <div class="compose-image-btns">
+                      <input class="newImage.color" type="color" id="color" v-model="note.color" value="#ffffff" :style="{opacity:0}"/>
+                      <label for="color"><i class="fas fa-palette"></i></label>
+                      <label for="bgcolor"><i class="fas fa-fill-drip"></i></label>
+                      <input type="color" id="bgcolor" v-model="note.backgroundColor" value="#ffffff" :style="{opacity:0}"/>
+                  </div>
+              </div>
             <router-link to="/keep"><button @click="saveNote" class="add-btn">Add Note</button></router-link>
             <router-link to="/keep"><button @click="deleteNote" class="add-btn" >Delete Note</button></router-link>
             
