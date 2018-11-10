@@ -39,13 +39,16 @@ body{
 }
 .keep-app {
     background: url('../img/notebook.jpg');
+    background-repeat: no-repeat;
     margin: 0 auto;
     background-position: bottom;
-    background-attachment: scroll;
+    background-attachment: fixed;
     text-align: center;
-    position: relative;
-    height: 100%;
+    position: static;
+    height: 100vh;
     width: 100%;
+    font-family: 'pattaya';
+    overflow : auto
 }
 
 .backgroundimage{
@@ -56,9 +59,10 @@ body{
     background-attachment: fixed;
     text-align: center;
     position: static;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    font-family: 'pattaya'
+    font-family: 'pattaya';
+    overflow : auto;
 }
 
 .edit-btn{
@@ -107,13 +111,4 @@ page-break-inside: avoid;
 .main-ham{
     font-size: 20px;
 }
-
-@media (min-width: 400px) {
-    .keep-app {
-        height: 100vh;
-    }
-    .backgroundimage{
-        height: 100vh;
-    }
-}    
 
