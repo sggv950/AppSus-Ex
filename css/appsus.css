@@ -8,7 +8,7 @@
 }
 
 .app-nav-item{
-    background-color: green;
+    background-color: black;
     border-radius: 10px;
     width: 318px;
     text-align: center;
@@ -22,7 +22,7 @@
 }
 
 .app-nav-item:hover{
-    background-color: #b9e2ee;
+color:green;
 }
 
 .isOpen{
